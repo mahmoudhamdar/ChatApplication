@@ -1,0 +1,30 @@
+@ChatApplication_HostAddress = http://localhost:5279
+
+POST {{ChatApplication_HostAddress}}/api/userChatroom
+Content-Type: application/json
+Accept: application/json
+
+{
+"UserId":"98612b72-32a2-4922-852d-373d0078e02f",
+"RoomId":"2cca3a0e-16e4-4dd4-bee5-a1368db03c10"
+}
+###
+POST {{ChatApplication_HostAddress}}/api/user/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Username": "Hassan",
+  "Email": "mahmoud.hamdar@gmail.com",
+  "Password": "Vendetta007*"
+  
+}
+###
+
+GET {{ChatApplication_HostAddress}}/api/user/noChatRoomUsers/8b899bc2-c5ba-4924-80e4-06cfe8849530
+Content-Type: application/json
+Accept: application/json
+
+
+
+
