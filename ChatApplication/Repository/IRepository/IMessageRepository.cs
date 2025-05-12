@@ -1,7 +1,6 @@
+using WebApplication1.Models;
 
-using ChatApplication.Models;
-
-namespace ChatApplication.Repository.IRepository;
+namespace WebApplication1.Repository.IRepository;
 
 public interface IMessageRepository : IRepository<Message>
 {

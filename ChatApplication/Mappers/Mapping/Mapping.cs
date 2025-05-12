@@ -1,9 +1,9 @@
-using ChatApplication.Mappers.UserMapper;
-using ChatApplication.Mappers.MessageMapper;
-using ChatApplication.Mappers.ChatRoomMapper;
-using ChatApplication.Services;
+using WebApplication1.Services;
+using WebApplication1.Mappers.ChatRoomMapper;
+using WebApplication1.Mappers.MessageMapper;
+using WebApplication1.Mappers.UserMapper;
 
-namespace ChatApplication.Mappers.Mapping;
+namespace WebApplication1.Mappers.Mapping;
 
 public class Mapping : IMapping
 {   

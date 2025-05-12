@@ -1,4 +1,4 @@
-namespace ChatApplication.DTOs.UserDTO;
+namespace WebApplication1.DTOs.UserDTO;
 
 public class UserResponse
 {

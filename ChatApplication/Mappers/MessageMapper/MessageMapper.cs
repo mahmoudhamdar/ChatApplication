@@ -1,8 +1,7 @@
+using WebApplication1.DTOs.MessageDTO;
+using WebApplication1.Models;
 
-using ChatApplication.DTOs.MessageDTO;
-using ChatApplication.Models;
-
-namespace ChatApplication.Mappers.MessageMapper;
+namespace WebApplication1.Mappers.MessageMapper;
 
 public class MessageMapper : IMessageMapper
 {

@@ -1,13 +1,13 @@
-using ChatApplication.DTOs.UserDTO;
-using ChatApplication.Mappers.Mapping;
-using ChatApplication.Repository.IRepository;
 using FastEndpoints;
+using WebApplication1.DTOs.UserDTO;
+using WebApplication1.Mappers.Mapping;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.EndPoints.User;
+namespace WebApplication1.EndPoints.User;
 
 
     
-    public class GetNonChatRoomUsers : EndpointWithoutRequest<IEnumerable<UserResponse>>
+    public class GetNonChatRoomUsers : Ep.NoReq.Res<IEnumerable<UserResponse>>
     {
         
         private readonly IUnitOfWork _unitOfWork;
@@ -22,7 +22,7 @@ namespace ChatApplication.EndPoints.User;
         
         public override void Configure()
         {
-            Get("/api/user/noChatRoomUsers/${id}");
+            Get("/api/user/noChatRoomUsers/{id}");
             AllowAnonymous();
         }
 
@@ -30,7 +30,8 @@ namespace ChatApplication.EndPoints.User;
         {
             var id = Route<string>("id");
             
-            var userChatRoomsRes = await _unitOfWork.UserChatRoomRepository
+            var userChatRoomsRes = await _unitOfWork
+                .UserChatRoomRepository
                 .GetallAsync();
             var userChatRooms = userChatRoomsRes.Where(x=>x.UserId.Equals(id)).ToList();
             var ChatRoomsList = userChatRooms
@@ -39,7 +40,8 @@ namespace ChatApplication.EndPoints.User;
             if (userChatRooms is null)
                 await SendErrorsAsync(401, ct);
 
-            var userList = userChatRooms.Where(x =>ChatRoomsList.Contains(x.RoomId)).Select(x => x.UserId).ToList();
+            var userList = userChatRooms.Where(x =>ChatRoomsList.Contains(x.RoomId))
+                .Select(x => x.UserId).ToList();
           
             var usersNotInChatRoom = await _unitOfWork.UserRepository
                 .GetAsync(x => !userList.Contains(x.Id));

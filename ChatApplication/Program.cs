@@ -1,15 +1,16 @@
 using System.Text;
-using ChatApplication.Services;
-using ChatApplication.Data;
-using ChatApplication.Mappers.Mapping;
-using ChatApplication.Repository;
-using ChatApplication.Repository.IRepository;
-using ChatApplication.Models;
+using WebApplication1.Services;
+using WebApplication1.Data;
+using WebApplication1.Mappers.Mapping;
+using WebApplication1.Repository;
+using WebApplication1.Repository.IRepository;
+using WebApplication1.Models;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using WebApplication1.Services.SocketIO;
 
 const string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ChatAppContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
-
+//builder.Services.AddScoped<ISocketService, SocketService>();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -48,7 +49,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(myAllowSpecificOrigins,
         builder =>
         {
-            builder.WithOrigins("https://localhost:7268",
+            builder.WithOrigins("https://localhost:5169",
                     "http://localhost:3000"
                     , "http://localhost:3001")
                 .AllowAnyHeader()
@@ -60,6 +61,7 @@ builder.Services.AddCors(options =>
 
 
 
+builder.Services.AddFastEndpoints();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddAuthorization();
@@ -78,7 +80,7 @@ app.UseRouting();
 app.UseCors(myAllowSpecificOrigins);
 
 app.UseFastEndpoints();
-
+    
 app.UseDefaultFiles();
 
 app.UseAuthentication();

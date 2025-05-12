@@ -1,9 +1,9 @@
 using System.Linq.Expressions;
-using ChatApplication.Data;
-using ChatApplication.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.Data;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.Repository;
+namespace WebApplication1.Repository;
 
 public class Repository<T> : IRepository<T> where T : class
 {

@@ -1,8 +1,8 @@
-using ChatApplication.DTOs.UserDTO;
-using ChatApplication.Models;
-using ChatApplication.Services;
+using WebApplication1.Services;
+using WebApplication1.DTOs.UserDTO;
+using WebApplication1.Models;
 
-namespace ChatApplication.Mappers.UserMapper;
+namespace WebApplication1.Mappers.UserMapper;
 
 public class UserMapper:IUserMapper
 {

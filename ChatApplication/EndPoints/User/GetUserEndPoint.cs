@@ -1,12 +1,12 @@
-using ChatApplication.DTOs.UserDTO;
-using ChatApplication.Mappers.Mapping;
-using ChatApplication.Repository.IRepository;
 using FastEndpoints;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
+using WebApplication1.DTOs.UserDTO;
+using WebApplication1.Mappers.Mapping;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.EndPoints.User;
+namespace WebApplication1.EndPoints.User;
    
-    public class GetUserEndPoint : Endpoint<UserRequest, UserResponse>
+    public class GetUserEndPoint :Ep.Req<UserRequest>.Res<Results<Ok<UserResponse>,NotFound>> 
     {
         
         private readonly IUnitOfWork _unitOfWork;
@@ -28,8 +28,9 @@ namespace ChatApplication.EndPoints.User;
             var id = Route<string>("id");
 
             var user = _unitOfWork.UserRepository.GetAsync(user=>user.Id.Equals(id)).Result.FirstOrDefault();
-            
+            if (user is null) await SendResultAsync(TypedResults.NotFound());
             var res=_userMapper.UserMapper.UserToResponse(user);
-            await SendOkAsync(res, ct);
+            await SendResultAsync(TypedResults.Ok(res));
+           
         }
     }

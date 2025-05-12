@@ -1,9 +1,9 @@
-using ChatApplication.Models;
-using ChatApplication.Data;
-using IMessageRepository = ChatApplication.Repository.IRepository.IMessageRepository;
+using WebApplication1.Data;
+using WebApplication1.Models;
+using IMessageRepository = WebApplication1.Repository.IRepository.IMessageRepository;
 
 
-namespace ChatApplication.Repository;
+namespace WebApplication1.Repository;
 
 using IMessageRepository = IRepository.IMessageRepository;
 

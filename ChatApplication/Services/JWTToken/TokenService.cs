@@ -1,10 +1,10 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using ChatApplication.Models;
 using Microsoft.IdentityModel.Tokens;
+using WebApplication1.Models;
 
-namespace ChatApplication.Services;
+namespace WebApplication1.Services;
 
 public class TokenService : ITokenService
 {

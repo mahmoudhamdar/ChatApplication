@@ -1,7 +1,7 @@
-using ChatApplication.Repository.IRepository;
 using FastEndpoints;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.EndPoints.UserChatRoom;
+namespace WebApplication1.EndPoints.UserChatRoom;
 
     public class PostUserChatRoomEndPoint : Endpoint<Models.UserChatRoom, Models.UserChatRoom>
     {
@@ -23,7 +23,7 @@ namespace ChatApplication.EndPoints.UserChatRoom;
             
             
             var exists = await _unitOfWork.UserChatRoomRepository
-                .GetAsync(x => x.UserId == req.UserId && x.RoomId == req.RoomId);
+                .GetAsync(x => x.UserId.Equals(req.UserId)&& x.RoomId.Equals(req.RoomId));
 
 
             if (exists.Any())

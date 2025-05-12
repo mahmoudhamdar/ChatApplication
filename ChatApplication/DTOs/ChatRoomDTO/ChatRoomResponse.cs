@@ -1,5 +1,5 @@
 
-namespace ChatApplication.DTOs.ChatRoomDTO;
+namespace WebApplication1.DTOs.ChatRoomDTO;
 
 public class ChatRoomResponse
 {

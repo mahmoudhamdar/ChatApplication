@@ -1,8 +1,7 @@
-using ChatApplication.Models;
-using ChatApplication.DTOs.ChatRoomDTO;
-using ChatApplication.Models;
+using WebApplication1.DTOs.ChatRoomDTO;
+using WebApplication1.Models;
 
-namespace ChatApplication.Mappers.ChatRoomMapper;
+namespace WebApplication1.Mappers.ChatRoomMapper;
 
 public interface IChatRomMapper
 {

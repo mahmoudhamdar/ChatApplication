@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const api = "http://localhost:5279/api"
+export const api = "http://localhost:5169/api"
 
 export const axiosPrivate =
 

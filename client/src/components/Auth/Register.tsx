@@ -5,8 +5,8 @@ import {useRouter} from "next/navigation";
 import {z} from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {registerApi} from "@/Services/UserApiService";
-import {ChatRoomPost} from "@/Services/ChatRoomApiService";
+
+
 import Link from "next/link";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {UserProfileToken} from "@/Models/User";
@@ -46,7 +46,10 @@ export const Register = () => {
             password: value.password,
             email: value.email,
         })        
-        .then(res => setUser(res.data));
+        .then(res => {
+            setUser(res.data)
+            return res.data;
+        });
         console.log(data);
       
         if (user)

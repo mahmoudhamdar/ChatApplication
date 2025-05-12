@@ -1,6 +1,7 @@
-using ChatApplication.Repository.IRepository;
 using FastEndpoints;
-namespace ChatApplication.EndPoints.UserChatRoom;
+using WebApplication1.Repository.IRepository;
+
+namespace WebApplication1.EndPoints.UserChatRoom;
 
 
     public class GetUserChatRoomByRoomId : EndpointWithoutRequest<IEnumerable<Models.UserChatRoom>>

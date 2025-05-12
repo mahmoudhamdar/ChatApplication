@@ -1,12 +1,12 @@
-using ChatApplication.DTOs.UserDTO;
-using ChatApplication.Mappers.Mapping;
-using ChatApplication.Repository.IRepository;
-using ChatApplication.Services;
+using WebApplication1.Mappers.Mapping;
+using WebApplication1.Repository.IRepository;
 using FastEndpoints;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.DTOs.UserDTO;
+using WebApplication1.Services;
 
-namespace ChatApplication.EndPoints.User;
+namespace WebApplication1.EndPoints.User;
 
     public class UserLoginEndPoint : Endpoint<UserLogin, UserResponse>
     {

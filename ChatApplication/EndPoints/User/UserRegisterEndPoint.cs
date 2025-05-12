@@ -1,12 +1,13 @@
-using ChatApplication.DTOs.UserDTO;
-using ChatApplication.Mappers.Mapping;
-using ChatApplication.Repository.IRepository;
 using FastEndpoints;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
+using WebApplication1.DTOs.UserDTO;
+using WebApplication1.Mappers.Mapping;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.EndPoints.User;
+namespace WebApplication1.EndPoints.User;
 
-public class UserRegisterEndPoint:Endpoint<UserRequest ,UserResponse >
+public class UserRegisterEndPoint:Endpoint< UserRequest , Results<Ok<UserResponse>,InternalServerError>>
 {
     
     private readonly IMapping _mapping;
@@ -26,32 +27,29 @@ public class UserRegisterEndPoint:Endpoint<UserRequest ,UserResponse >
         AllowAnonymous();
     }
 
-    public override async Task HandleAsync(UserRequest registerUser , CancellationToken ct)
+    public override async Task<Results<Ok<UserResponse>,InternalServerError>> ExecuteAsync (UserRequest registerUser , CancellationToken ct)
     {
         
         try
         {
-            if (ValidationFailed) await SendErrorsAsync(400,ct);
+            if (ValidationFailed) return TypedResults.InternalServerError(); 
 
             var user = _mapping.UserMapper.RequestToUser(registerUser);
-
             var createUser = await _userManager.CreateAsync(user, registerUser.Password);
-            if (!createUser.Succeeded) await SendErrorsAsync(500,ct);
-            var roleResult = await _userManager.AddToRoleAsync(user, "User");
-            if (roleResult.Succeeded) 
-              
-            
-              await SendOkAsync(_mapping.UserMapper.UserToResponse(user),ct);
 
-            await SendErrorsAsync(500,ct);
+            if (!createUser.Succeeded) return TypedResults.InternalServerError(); 
+            var roleResult = await _userManager.AddToRoleAsync(user, "User");
+            if (!roleResult.Succeeded) return TypedResults.InternalServerError();
+            return TypedResults.Ok(_mapping.UserMapper.UserToResponse(user));
+
         }
         catch (Exception e)
         {
-            await SendErrorsAsync(500,ct);
+            return TypedResults.InternalServerError(); 
         }
 
-        await _unitOfWork.UserRepository.AddAsync(_mapping.UserMapper.RequestToUser(registerUser));
-        await SendAsync(new UserResponse(),201,ct);
+        
+        
     }
     
     

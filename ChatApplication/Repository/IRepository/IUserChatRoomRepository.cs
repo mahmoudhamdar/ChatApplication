@@ -1,6 +1,6 @@
-using ChatApplication.Models;
+using WebApplication1.Models;
 
-namespace ChatApplication.Repository.IRepository;
+namespace WebApplication1.Repository.IRepository;
 
 public interface IUserChatRoomRepository:IRepository<UserChatRoom>
 {

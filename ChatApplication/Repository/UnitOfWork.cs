@@ -1,7 +1,7 @@
-using ChatApplication.Data;
-using ChatApplication.Repository.IRepository;
+using WebApplication1.Data;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.Repository;
+namespace WebApplication1.Repository;
 
 public class UnitOfWork : IUnitOfWork
 {

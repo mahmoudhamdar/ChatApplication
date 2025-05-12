@@ -4,6 +4,7 @@ import {User} from "@/components/User/User";
 import {useState} from "react";
 import {UseUser} from "@/Stores/StoreUses/UseUser";
 import {UserProfileToken} from "@/Models/User";
+import {useRouter} from "next/navigation";
 
 
 export interface user {
@@ -13,8 +14,10 @@ export interface user {
     
 }
 
+
 export const AddConversation = () => {
     
+    const router =useRouter()
     const {user} = UseUser()
     
     async function fetchUsers() {
@@ -35,7 +38,7 @@ export const AddConversation = () => {
         const userd:UserProfileToken[]=users.filter((User:UserProfileToken) => User.username !== user.username)
         setUsers(userd)
     
-        
+        router.refresh()
   }
     
     

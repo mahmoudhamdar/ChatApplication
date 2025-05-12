@@ -1,6 +1,6 @@
-using ChatApplication.Models;
+using WebApplication1.Models;
 
-namespace ChatApplication.Services;
+namespace WebApplication1.Services;
 
 public interface ITokenService
 {

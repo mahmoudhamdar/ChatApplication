@@ -2,7 +2,6 @@
 
 import {useState} from "react"
 import {useRoomStoreContext} from "@/Stores/Providers/RoomStoreProvider"
-import {useUserStoreContext} from "@/Stores/Providers/UserStoreProvider"
 import {socket} from "@/Socket/socket"
 import {api, axiosPrivate} from "@/Services/ApiService"
 import "./MessageInput.css"

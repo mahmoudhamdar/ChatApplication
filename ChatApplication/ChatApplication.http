@@ -1,4 +1,4 @@
-@ChatApplication_HostAddress = http://localhost:5279
+@ChatApplication_HostAddress = http://localhost:5169
 
 POST {{ChatApplication_HostAddress}}/api/userChatroom
 Content-Type: application/json
@@ -14,14 +14,14 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "Username": "Hassan",
+  "Username": "Zahraa",
   "Email": "mahmoud.hamdar@gmail.com",
   "Password": "Vendetta007*"
   
 }
 ###
 
-GET {{ChatApplication_HostAddress}}/api/user/noChatRoomUsers/8b899bc2-c5ba-4924-80e4-06cfe8849530
+GET {{ChatApplication_HostAddress}}/api/user/noChatRoomUsers/2cce7d46-1f59-48cc-9c6f-d414ce2a348f
 Content-Type: application/json
 Accept: application/json
 

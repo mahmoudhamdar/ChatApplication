@@ -1,4 +1,4 @@
-namespace ChatApplication.Repository.IRepository;
+namespace WebApplication1.Repository.IRepository;
 
 public interface IUnitOfWork
 {

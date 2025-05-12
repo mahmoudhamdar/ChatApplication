@@ -1,10 +1,10 @@
 "use client"
 import {useEffect, useRef, useState} from "react"
 import {Message} from "./Message"
-import {useRoomStoreContext} from "../../Stores/Providers/RoomStoreProvider"
-import {GetMessage} from "../../Services/MessageApiService"
-import {socket} from "../../Socket/socket"
-import {useUserStoreContext} from "../../Stores/Providers/UserStoreProvider"
+
+import {GetMessage} from "@/Services/MessageApiService"
+import {socket} from "@/Socket/socket"
+
 import "./Messages.css"
 import UseRoom from "@/Stores/StoreUses/UseRoom";
 import {UseUser} from "@/Stores/StoreUses/UseUser";

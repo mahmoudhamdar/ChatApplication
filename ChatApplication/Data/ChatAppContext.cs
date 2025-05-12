@@ -1,9 +1,9 @@
-using ChatApplication.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.Models;
 
-namespace ChatApplication.Data;
+namespace WebApplication1.Data;
 
 public class ChatAppContext : IdentityDbContext<User>
 {

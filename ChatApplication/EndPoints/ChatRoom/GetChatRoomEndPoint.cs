@@ -1,10 +1,10 @@
-using ChatApplication.DTOs.ChatRoomDTO;
-using ChatApplication.Mappers.Mapping;
-using ChatApplication.Models;
-using ChatApplication.Repository.IRepository;
+using WebApplication1.Models;
 using FastEndpoints;
+using WebApplication1.DTOs.ChatRoomDTO;
+using WebApplication1.Mappers.Mapping;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.EndPoints;
+namespace WebApplication1.EndPoints;
 
 public class GetChatRoomEndPoint : EndpointWithoutRequest<ChatRoomResponse>
 {
@@ -28,7 +28,8 @@ public override void Configure()
         {
             var id = Route<string>("id");
 
-            var messege = _unitOfWork.ChatRoomRepository.GetAsync(x => x.RoomId.Equals(id)).Result.FirstOrDefault();
+            var messege = _unitOfWork.ChatRoomRepository
+                .GetAsync(x => x.RoomId.Equals(id)).Result.FirstOrDefault();
             
             var response = _chatRoomMapper.ChatRomMapper.ChatRoomToResponse(messege);
             await SendOkAsync(response, ct);

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ChatApplication.DTOs.UserDTO;
+namespace WebApplication1.DTOs.UserDTO;
 
 public class UserLogin
 {

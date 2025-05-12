@@ -1,6 +1,6 @@
-using ChatApplication.Models;
+using WebApplication1.Models;
 
-namespace ChatApplication.DTOs.ChatRoomDTO;
+namespace WebApplication1.DTOs.ChatRoomDTO;
 
 public class ChatRoomRequest
 {

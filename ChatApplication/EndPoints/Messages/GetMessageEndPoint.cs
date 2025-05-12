@@ -1,9 +1,9 @@
-using ChatApplication.Mappers.Mapping;
-using ChatApplication.DTOs.MessageDTO;
-using ChatApplication.Repository.IRepository;
 using FastEndpoints;
+using WebApplication1.DTOs.MessageDTO;
+using WebApplication1.Mappers.Mapping;
+using WebApplication1.Repository.IRepository;
 
-namespace ChatApplication.EndPoints.Messages;
+namespace WebApplication1.EndPoints.Messages;
 
 public class GetMessageEndPoint : EndpointWithoutRequest<IEnumerable<MessageResponse>>
 

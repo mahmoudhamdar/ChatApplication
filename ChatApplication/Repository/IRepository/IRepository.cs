@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 
-namespace ChatApplication.Repository.IRepository;
+namespace WebApplication1.Repository.IRepository;
 
 public interface IRepository<T>
 {

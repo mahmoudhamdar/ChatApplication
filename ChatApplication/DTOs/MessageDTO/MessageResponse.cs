@@ -1,4 +1,4 @@
-namespace ChatApplication.DTOs.MessageDTO;
+namespace WebApplication1.DTOs.MessageDTO;
 
 public class MessageResponse
 {
