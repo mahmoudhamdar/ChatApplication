@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GhostTextManager">
+    <option name="inputs">
+      <map>
+        <entry key="Cannot convert expression type 'Microsoft.AspNetCore.Http.HttpResults.Ok&lt;System.Collections.Generic.IEnumerable&lt;WebApplication1.DTOs.UserDTO.UserResponse&gt;&gt;' to return type 'System.Threading.Tasks.Task&lt;Microsoft.AspNetCore.Http.HttpResults.Results&lt;Microsoft.AspNetCore.Http.HttpResults.Ok&lt;System.Collections.Generic.IEnumerable&lt;WebApplication1.DTOs.UserDTO.UserResponse&gt;&gt;,Microsoft.AspNetCore.Http.HttpResults.NotFound&gt;&gt;'">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747050958894" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to configure cors in laravel">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747045354511" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why here working fine">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747051064143" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

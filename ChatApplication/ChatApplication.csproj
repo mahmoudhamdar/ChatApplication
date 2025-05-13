@@ -21,7 +21,6 @@
         </PackageReference>
         <PackageReference Include="NetCoreServer" Version="8.0.7" />
         <PackageReference Include="SocketIOClient" Version="3.1.2" />
-        <PackageReference Include="SocketIOSharp2" Version="2.0.5" />
     </ItemGroup>
 
     <ItemGroup>

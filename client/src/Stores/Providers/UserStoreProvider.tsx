@@ -1,4 +1,3 @@
-"use client"
 import React, {createContext, ReactNode, useContext} from 'react';
 import {IdStoreState, useIdStore,} from "@/Stores/IdStore"
 

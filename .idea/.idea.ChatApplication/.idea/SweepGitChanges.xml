@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SweepGitChangeService">
+    <option name="recentCommitSummaries">
+      <list>
+        <option value="Refactored and fixed the &quot;GetNonChatRoomUsers&quot; endpoint to correctly retrieve users not in a specific chat room. Updated GetNonChatRoomUsers.cs to correct the route parameter and improve filtering logic. Additionally, renamed namespaces from ChatApplication to WebApplication1 across multiple files to align with the updated project structure. Updated project files (ChatApplication.csproj, project.assets.json, project.packagespec.json, etc.) to reflect new dependencies and paths. Added and modified DTOs, mappers, repositories, and services to support the updated user and chat room logic." />
+        <option value="Initial project setup with foundational files. Added socket.io.js.map and socket.io.msgpack.min.js.map to provide source maps for debugging socket.io and its msgpack extension. Introduced User.ts to define a UserProfileToken type for managing user authentication data. Included url.d.ts to provide TypeScript type definitions for Node.js URL utilities." />
+      </list>
+    </option>
+  </component>
+</project>
