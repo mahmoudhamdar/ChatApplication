@@ -22,15 +22,16 @@ namespace WebApplication1.EndPoints.User;
             Get("/api/user/{id}");
             AllowAnonymous();
         }
-
-        public override async Task HandleAsync(UserRequest req, CancellationToken ct)
+        
+        public override async Task<Results<Ok<UserResponse>, NotFound>> ExecuteAsync(UserRequest req, CancellationToken ct)
         {
             var id = Route<string>("id");
 
             var user = _unitOfWork.UserRepository.GetAsync(user=>user.Id.Equals(id)).Result.FirstOrDefault();
-            if (user is null) await SendResultAsync(TypedResults.NotFound());
+            
+            if (user is null) return TypedResults.NotFound();
+            
             var res=_userMapper.UserMapper.UserToResponse(user);
-            await SendResultAsync(TypedResults.Ok(res));
-           
+           return TypedResults.Ok(res);
         }
     }
