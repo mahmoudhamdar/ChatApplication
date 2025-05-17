@@ -1,9 +1,10 @@
 using FastEndpoints;
+using Microsoft.AspNetCore.Http.HttpResults;
 using WebApplication1.Repository.IRepository;
 
 namespace WebApplication1.EndPoints.UserChatRoom;
 
-    public class PostUserChatRoomEndPoint : Endpoint<Models.UserChatRoom, Models.UserChatRoom>
+    public class PostUserChatRoomEndPoint : Ep.Req<Models.UserChatRoom>.Res< Results<Ok<Models.UserChatRoom>,BadRequest<string>>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -18,7 +19,7 @@ namespace WebApplication1.EndPoints.UserChatRoom;
             AllowAnonymous();
         }
 
-        public override async Task HandleAsync(Models.UserChatRoom req, CancellationToken ct)
+        public override async Task<Results<Ok< Models.UserChatRoom>,BadRequest<string>>> ExecuteAsync(Models.UserChatRoom req, CancellationToken ct)
         {
             
             
@@ -28,13 +29,13 @@ namespace WebApplication1.EndPoints.UserChatRoom;
 
             if (exists.Any())
             {
-                await SendErrorsAsync(400, ct);
-                return; // Important to return here
+                return TypedResults.BadRequest("already exists");
+               
             }
 
             await _unitOfWork.UserChatRoomRepository.AddAsync(req);
             
-            await SendAsync(req, 200, ct);
+           return TypedResults.Ok(req);
         }
         
       

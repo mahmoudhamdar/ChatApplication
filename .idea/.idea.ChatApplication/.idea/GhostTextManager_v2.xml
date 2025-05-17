@@ -3,37 +3,122 @@
   <component name="GhostTextManager">
     <option name="inputs">
       <map>
-        <entry key="Cannot convert expression type 'Microsoft.AspNetCore.Http.HttpResults.Ok&lt;System.Collections.Generic.IEnumerable&lt;WebApplication1.DTOs.UserDTO.UserResponse&gt;&gt;' to return type 'System.Threading.Tasks.Task&lt;Microsoft.AspNetCore.Http.HttpResults.Results&lt;Microsoft.AspNetCore.Http.HttpResults.Ok&lt;System.Collections.Generic.IEnumerable&lt;WebApplication1.DTOs.UserDTO.UserResponse&gt;&gt;,Microsoft.AspNetCore.Http.HttpResults.NotFound&gt;&gt;'">
+        <entry key="Can I use socketIOclient for asp.net  and socket-io-client for react">
           <value>
             <GhostTextMetaData>
-              <option name="count" value="1.0" />
+              <option name="count" value="2.0" />
               <option name="timestamps">
                 <list>
-                  <option value="1747050958894" />
+                  <option value="1746968546011" />
+                  <option value="1746968169261" />
                 </list>
               </option>
             </GhostTextMetaData>
           </value>
         </entry>
-        <entry key="how to configure cors in laravel">
+        <entry key="Cannot resolve symbol 'On'">
           <value>
             <GhostTextMetaData>
               <option name="count" value="1.0" />
               <option name="timestamps">
                 <list>
-                  <option value="1747045354511" />
+                  <option value="1746968023097" />
                 </list>
               </option>
             </GhostTextMetaData>
           </value>
         </entry>
-        <entry key="why here working fine">
+        <entry key="How To set up socket.IO connection with asp.net backend and react frontend">
           <value>
             <GhostTextMetaData>
               <option name="count" value="1.0" />
               <option name="timestamps">
                 <list>
-                  <option value="1747051064143" />
+                  <option value="1746967802402" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="I waant to be able to debug this code help me fix it">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1746962081006" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Pdb file for assembly C:\Program Files\dotnet\shared\Microsoft.NETCore.App\9.0.4\System.Private.CoreLib.dll was not found or failed to read">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1746961669355" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Unhandled exception. System.InvalidOperationException: No service for type 'FastEndpoints.IServiceResolver' has been registered.@Program.cs">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1746951954965" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="You just won't be able to step into or debug .NET Core framework code&#10;I want  to do this">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1746962160740" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="the socket server provided is not connecting to the frontend one">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1746967096280" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="what about rider">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1746962299063" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why the symbol OK cannot be resolved">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1746961149277" />
                 </list>
               </option>
             </GhostTextMetaData>
