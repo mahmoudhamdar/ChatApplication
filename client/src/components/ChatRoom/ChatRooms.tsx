@@ -24,8 +24,7 @@ export const ChatRooms = (props) => {
 
         try {
             console.log(props.chatRooms)    
-          //  const userChatrooms = props.chatRooms.filter((chatroom) => chatroom.userId !== user.id)
-            console.log(props.chatRooms)
+            
             setChatRooms(props.chatRooms)
             if (props.length > 0 && !activeChatRoomId) {
                 // @ts-ignore

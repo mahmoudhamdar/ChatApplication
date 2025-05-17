@@ -21,9 +21,14 @@ Accept: application/json
 }
 ###
 
-GET {{ChatApplication_HostAddress}}/api/user/noChatRoomUsers/2cce7d46-1f59-48cc-9c6f-d414ce2a348f
+GET {{ChatApplication_HostAddress}}/api/user/noChatRoomUsers/98612b72-32a2-4922-852d-373d0078e02f
 Content-Type: application/json
 Accept: application/json
+
+###
+
+GET {{ChatApplication_HostAddress}}/api/user/otherUser/2cca3a0e-16e4-4dd4-bee5-a1368db03c10
+
 
 
 

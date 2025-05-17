@@ -40,7 +40,7 @@ namespace WebApplication1.EndPoints.User;
             if (userChatRooms is null)
                 await SendErrorsAsync(401, ct);
 
-            var userList = userChatRooms.Where(x =>ChatRoomsList.Contains(x.RoomId))
+            var userList = userChatRoomsRes.Where(x =>ChatRoomsList.Contains(x.RoomId))
                 .Select(x => x.UserId).ToList();
           
             var usersNotInChatRoom = await _unitOfWork.UserRepository

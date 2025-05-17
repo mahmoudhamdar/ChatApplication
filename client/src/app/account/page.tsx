@@ -3,10 +3,13 @@ import {ChatRooms} from "@/components/ChatRoom/ChatRooms";
 import {ChatWindow} from "@/components/ChatWIndow/ChatWindow";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {AddConversation} from "@/components/AddConversation";
+import {UseUser} from "@/Stores/StoreUses/UseUser";
 
 export async function fetchChatRooms ()  {
+    const {user} =UseUser()
     
-    const response = await axiosPrivate(`${api}/chatroom`)
+    
+    const response = await axiosPrivate(`${api}/chatroom/${user.id}`)
     return response.data   
 }
 

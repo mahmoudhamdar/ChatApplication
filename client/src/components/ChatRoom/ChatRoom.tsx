@@ -4,7 +4,7 @@
 import "./ChatRoom.css"
 import {useEffect, useState} from "react"
 import UseRoom from "@/Stores/StoreUses/UseRoom";
-import {axiosPrivate} from "@/Services/ApiService";
+import {api, axiosPrivate} from "@/Services/ApiService";
 import {UseUser} from "@/Stores/StoreUses/UseUser";
 import {user} from "@/components/AddConversation";
 
@@ -25,18 +25,14 @@ export const ChatRoom = ({
         
       async  function  getUser(){
           
-          const users:user[]= await axiosPrivate.get(`/api/userChatRoom/${roomId}`).then(res => {
-              return res.data
-          })
+         const otherUsers:user[] = await axiosPrivate.get(`${api}/user/otherUser/${roomId}`)
+             .then(res => res.data)
       
-          const   userss =users.filter(User=>User.username!==user.username)[0]
-             const User:user =   await  axiosPrivate.get(`/api/user/${userss}`)
-                 .then(res => {
-                return res.data
-            })
-          setOtherUser(User)
-          
-        }
+             const  otherUser =otherUsers.filter(User=>User.username!==user.username)[0]
+            
+          setOtherUser(otherUser)
+          console.log(otherUser);
+      }
         
         getUser().then(r => r)
         

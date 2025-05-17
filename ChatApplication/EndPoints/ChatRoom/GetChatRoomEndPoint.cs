@@ -6,7 +6,7 @@ using WebApplication1.Repository.IRepository;
 
 namespace WebApplication1.EndPoints;
 
-public class GetChatRoomEndPoint : EndpointWithoutRequest<ChatRoomResponse>
+public class GetChatRoomEndPoint : Ep.NoReq.Res<IEnumerable<ChatRoomResponse>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapping _chatRoomMapper ;
@@ -28,10 +28,15 @@ public override void Configure()
         {
             var id = Route<string>("id");
 
-            var messege = _unitOfWork.ChatRoomRepository
-                .GetAsync(x => x.RoomId.Equals(id)).Result.FirstOrDefault();
+            var userChatRooms = await _unitOfWork.UserChatRoomRepository
+                .GetAsync(x=>x.UserId.Equals(id));
+            var chatroomIds = userChatRooms.Select(x => x.RoomId).ToList();
+
+            var chatRooms= await _unitOfWork.ChatRoomRepository
+                .GetAsync(x => chatroomIds.Contains(x.RoomId));
             
-            var response = _chatRoomMapper.ChatRomMapper.ChatRoomToResponse(messege);
+            
+            var response = _chatRoomMapper.ChatRomMapper.ChatRoomsToResponses(chatRooms);
             await SendOkAsync(response, ct);
 
         }
