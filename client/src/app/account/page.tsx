@@ -4,27 +4,30 @@ import {ChatRooms} from "@/components/ChatRoom/ChatRooms";
 import {ChatWindow} from "@/components/ChatWIndow/ChatWindow";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {AddConversation} from "@/components/AddConversation";
+import {use} from "react";
 
 
-/*
 
-export async function fetchChatRooms (){
+
+export  function fetchChatRooms (){
     
-    const response = await axiosPrivate(`${api}/chatroom`)
+    const response = use (axiosPrivate(`${api}/chatroom`))
     return response.data   
 }
-*/
 
-export async function fetchMessages (roomId: string)  {
-    
-    const response = await axiosPrivate(`${api}/messages/${roomId}` )
-    
+
+export async function fetchMessages (roomId: string) {
+
+    const response = await axiosPrivate(`${api}/messages/${roomId}`)
+
     return response.data
 }
 
+
+
 export default async  function account() {
 
- //   const chatRooms:ChatRoomType[] = await fetchChatRooms()
+    const chatRooms:ChatRoomType[] = fetchChatRooms()
     
   
     

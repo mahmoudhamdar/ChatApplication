@@ -177,3 +177,4 @@ C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\tr
 C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\NetCoreServer.dll
+C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\ZLinq.dll

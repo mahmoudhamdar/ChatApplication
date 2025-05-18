@@ -27,11 +27,11 @@ namespace WebApplication1.EndPoints.User;
         {
             var id = Route<string>("id");
 
-            var user = _unitOfWork.UserRepository.GetAsync(user=>user.Id.Equals(id)).Result.FirstOrDefault();
+            var user = await _unitOfWork.UserRepository.GetAsync(user => user.Id.Equals(id));
             
             if (user is null) return TypedResults.NotFound();
             
-            var res=_userMapper.UserMapper.UserToResponse(user);
+            var res=_userMapper.UserMapper.UserToResponse(user.First());
            return TypedResults.Ok(res);
         }
     }

@@ -112,6 +112,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="why my next application is taking alot of time to run every request it was 300 to 500 ms now its 1000 ms or more">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747569177832" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="why the symbol OK cannot be resolved">
           <value>
             <GhostTextMetaData>

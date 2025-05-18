@@ -19,7 +19,7 @@ namespace WebApplication1.EndPoints.UserChatRoom;
 
         public override async Task HandleAsync( CancellationToken ct)
         {
-            var userChatroom = _unitOfWork.UserChatRoomRepository.GetallAsync().Result;
+            var userChatroom = await _unitOfWork.UserChatRoomRepository.GetallAsync();
             
             await SendOkAsync(userChatroom, ct);
             

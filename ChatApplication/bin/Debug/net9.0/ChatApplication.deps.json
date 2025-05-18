@@ -16,7 +16,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
           "NetCoreServer": "8.0.7",
-          "SocketIOClient": "3.1.2"
+          "SocketIOClient": "3.1.2",
+          "ZLinq": "1.4.5"
         },
         "runtime": {
           "ChatApplication.dll": {}
@@ -1156,6 +1157,14 @@
             "fileVersion": "6.0.21.52210"
           }
         }
+      },
+      "ZLinq/1.4.5": {
+        "runtime": {
+          "lib/net9.0/ZLinq.dll": {
+            "assemblyVersion": "1.4.5.0",
+            "fileVersion": "1.4.5.0"
+          }
+        }
       }
     }
   },
@@ -1801,6 +1810,13 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "ZLinq/1.4.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lp0uCKoORm00MqqSpcWW53BQD8olZMG2/Li7a6M7JOMAmR7e0TEtFDjPv3oQpsLsPedgiM2qlOS6/PVG1c519w==",
+      "path": "zlinq/1.4.5",
+      "hashPath": "zlinq.1.4.5.nupkg.sha512"
     }
   }
 }
