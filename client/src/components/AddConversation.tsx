@@ -2,9 +2,9 @@
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {User} from "@/components/User/User";
 import {useState} from "react";
-import {UseUser} from "@/Stores/StoreUses/UseUser";
 import {UserProfileToken} from "@/Models/User";
 import {useRouter} from "next/navigation";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
 
 
 export interface user {
@@ -17,8 +17,8 @@ export interface user {
  
 export const AddConversation = () => {
     
-    const router =useRouter()
-    const {user} = UseUser()
+   const [show,setShow] = useState(false)
+    const {user} = useUser()
     
     async function fetchUsers() {
         
@@ -34,16 +34,17 @@ export const AddConversation = () => {
       
         const users:UserProfileToken[] = await fetchUsers()
         console.log(users)
-      console.log(user)
+       console.log(user)
         const userd:UserProfileToken[]=users.filter((User:UserProfileToken) => User.username !== user.username)
         setUsers(userd)
-    
-        router.refresh()
+        setShow(!show)
+       
   } 
     
     
     return (
         <div >
+            
             <button onClick={handleClick}>Add Conversation</button>
 
             {users.map(user => <User id={user.id} username={user.username} key={user.id} email={""} token={""} />

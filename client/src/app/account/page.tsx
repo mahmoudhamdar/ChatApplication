@@ -1,17 +1,19 @@
+
 import "@/App.css"
 import {ChatRooms} from "@/components/ChatRoom/ChatRooms";
 import {ChatWindow} from "@/components/ChatWIndow/ChatWindow";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {AddConversation} from "@/components/AddConversation";
-import {UseUser} from "@/Stores/StoreUses/UseUser";
+
+
+/*
 
 export async function fetchChatRooms ()  {
-    const {user} =UseUser()
     
-    
-    const response = await axiosPrivate(`${api}/chatroom/${user.id}`)
+    const response = await axiosPrivate(`${api}/chatroom`)
     return response.data   
 }
+*/
 
 export async function fetchMessages (roomId: string)  {
     
@@ -22,7 +24,7 @@ export async function fetchMessages (roomId: string)  {
 
 export default async  function account() {
 
-    const chatRooms:UserChatRoomType[] = await fetchChatRooms()
+ //   const chatRooms:ChatRoomType[] = await fetchChatRooms()
     
   
     
@@ -37,7 +39,7 @@ export default async  function account() {
 
            
             <div className={`sidebar`}>
-                <ChatRooms chatRooms={chatRooms}/>
+                <ChatRooms />
             </div>
         
             <div className="sidebar-overlay">

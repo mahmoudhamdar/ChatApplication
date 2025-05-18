@@ -6,8 +6,8 @@ import {GetMessage} from "@/Services/MessageApiService"
 import {socket} from "@/Socket/socket"
 
 import "./Messages.css"
-import UseRoom from "@/Stores/StoreUses/UseRoom";
-import {UseUser} from "@/Stores/StoreUses/UseUser";
+import {useRoom} from "@/Stores/Providers/RoomStoreProvider";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
 
 type MessageType = {
     content: string
@@ -18,8 +18,8 @@ type MessageType = {
 }
 
 export const Messages = () => {
-    const {roomId} = UseRoom()
-    const {user} = UseUser()
+    const {roomId} = useRoom()
+    const {user} = useUser()
     const [messages, setMessages] = useState<MessageType[]>([])
     const [isLoading, setIsLoading] = useState(false)
     const messagesEndRef = useRef<HTMLDivElement>(null)

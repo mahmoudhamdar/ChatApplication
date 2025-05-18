@@ -16,8 +16,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
           "NetCoreServer": "8.0.7",
-          "SocketIOClient": "3.1.2",
-          "SocketIOSharp2": "2.0.5"
+          "SocketIOClient": "3.1.2"
         },
         "runtime": {
           "ChatApplication.dll": {}
@@ -55,31 +54,6 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.11.4.0",
             "fileVersion": "1.1100.424.31005"
-          }
-        }
-      },
-      "EmitterSharp/1.1.1.1": {
-        "dependencies": {
-          "SimpleThreadMonitor": "1.0.2.1"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/EmitterSharp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "EngineIOSharp2/2.0.0.4": {
-        "dependencies": {
-          "EmitterSharp": "1.1.1.1",
-          "Newtonsoft.Json": "13.0.3",
-          "SimpleThreadMonitor": "1.0.2.1",
-          "WebSocketSharp.CustomHeaders.CustomHttpServer": "1.0.2.3"
-        },
-        "runtime": {
-          "lib/net6.0/EngineIOSharp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -896,22 +870,6 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.3": {
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.3.27908"
-          }
-        }
-      },
-      "SimpleThreadMonitor/1.0.2.1": {
-        "runtime": {
-          "lib/netcoreapp3.0/SimpleThreadMonitor.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "SocketIO.Core/3.1.2": {
         "runtime": {
           "lib/netstandard2.0/SocketIO.Core.dll": {
@@ -953,17 +911,6 @@
           "lib/net6.0/SocketIOClient.dll": {
             "assemblyVersion": "3.1.2.0",
             "fileVersion": "3.1.2.0"
-          }
-        }
-      },
-      "SocketIOSharp2/2.0.5": {
-        "dependencies": {
-          "EngineIOSharp2": "2.0.0.4"
-        },
-        "runtime": {
-          "lib/net6.0/SocketIOSharp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1209,14 +1156,6 @@
             "fileVersion": "6.0.21.52210"
           }
         }
-      },
-      "WebSocketSharp.CustomHeaders.CustomHttpServer/1.0.2.3": {
-        "runtime": {
-          "lib/netcoreapp3.0/WebSocketSharp.CustomHeaders.CustomHttpServer.dll": {
-            "assemblyVersion": "1.0.2.3",
-            "fileVersion": "1.0.2.3"
-          }
-        }
       }
     }
   },
@@ -1239,20 +1178,6 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
-    },
-    "EmitterSharp/1.1.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-DeLFZVYsMAn3tu80aEbzrZkhD+ka53fcU2+Iw6PGjVplVMrWi0GnpGU2Mg7ixYVxSTCOJtcot5Hr57iz6Xxnlw==",
-      "path": "emittersharp/1.1.1.1",
-      "hashPath": "emittersharp.1.1.1.1.nupkg.sha512"
-    },
-    "EngineIOSharp2/2.0.0.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+beYzrI+6N53p7ArdPv6f9wdTpa8DQfamx6+pb7yx5AbVKR0LWJkDzHzy0ZX+9LCFzQkGnF5naRm4KvMEGcNfw==",
-      "path": "engineiosharp2/2.0.0.4",
-      "hashPath": "engineiosharp2.2.0.0.4.nupkg.sha512"
     },
     "FastEndpoints/6.0.0": {
       "type": "package",
@@ -1625,20 +1550,6 @@
       "path": "netcoreserver/8.0.7",
       "hashPath": "netcoreserver.8.0.7.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
-      "path": "newtonsoft.json/13.0.3",
-      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
-    },
-    "SimpleThreadMonitor/1.0.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UrJWDqlYRncLH36dEo755JoHIHs8KwpU1C7TCh4vTF6nusyUZMwGOfB750NYugGieqFRU9pepGaAKA3yOXONKw==",
-      "path": "simplethreadmonitor/1.0.2.1",
-      "hashPath": "simplethreadmonitor.1.0.2.1.nupkg.sha512"
-    },
     "SocketIO.Core/3.1.2": {
       "type": "package",
       "serviceable": true,
@@ -1666,13 +1577,6 @@
       "sha512": "sha512-CMmnmhvG1Qf8k6BPh3RLqc/9MNvGUlCOyptjoP8a62bowPQkHTWvN25yy+gQqx5Ry/NgzkQHBJNpmRJhZNZrVQ==",
       "path": "socketioclient/3.1.2",
       "hashPath": "socketioclient.3.1.2.nupkg.sha512"
-    },
-    "SocketIOSharp2/2.0.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-fhR1QKq0evI67pU69DSClFzW5qadzQIyAfzqBp6qRvUVRgud+hjyytsu6vl3GhvOJVh8VPnVOSlwRLtjeDBXjA==",
-      "path": "socketiosharp2/2.0.5",
-      "hashPath": "socketiosharp2.2.0.5.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",
@@ -1897,13 +1801,6 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
-    },
-    "WebSocketSharp.CustomHeaders.CustomHttpServer/1.0.2.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Mf7z030hh+zyf+yMRcpcXG6MaApqNOjR9bsZKhXLa2054q8jiE/1DHG8uVNDmcpVpv3uTTDV0FFA3q1iukVACg==",
-      "path": "websocketsharp.customheaders.customhttpserver/1.0.2.3",
-      "hashPath": "websocketsharp.customheaders.customhttpserver.1.0.2.3.nupkg.sha512"
     }
   }
 }

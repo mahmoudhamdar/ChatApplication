@@ -1,6 +1,6 @@
 
 "use client"
-import {UseUser} from "@/Stores/StoreUses/UseUser";
+
 import {useRouter} from "next/navigation";
 import {z} from "zod";
 import {useForm} from "react-hook-form";
@@ -10,6 +10,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import Link from "next/link";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {UserProfileToken} from "@/Models/User";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
 
 export const Register = () => {
     type Values = {
@@ -18,7 +19,7 @@ export const Register = () => {
         password: string
         confirmPassword: string
     }
-    const {setUser,user} = UseUser()
+    const {setUser,user} = useUser()
     const router =useRouter()
     const schema = z.object({
         username: z.coerce.string(),

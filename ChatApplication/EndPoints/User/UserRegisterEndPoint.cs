@@ -11,13 +11,12 @@ public class UserRegisterEndPoint:Endpoint< UserRequest , Results<Ok<UserRespons
 {
     
     private readonly IMapping _mapping;
-    private readonly IUnitOfWork _unitOfWork;
+
     private readonly UserManager<Models.User> _userManager;
    
     public UserRegisterEndPoint(IMapping mapping, IUnitOfWork unitOfWork,UserManager<Models.User> userManager)
     {
         _mapping = mapping;
-        _unitOfWork = unitOfWork;
         _userManager = userManager;
         
     }

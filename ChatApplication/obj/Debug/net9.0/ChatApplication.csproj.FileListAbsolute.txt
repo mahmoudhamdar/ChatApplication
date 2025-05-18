@@ -176,10 +176,4 @@ C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\ru
 C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\EmitterSharp.dll
-C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\EngineIOSharp.dll
 C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\NetCoreServer.dll
-C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\Newtonsoft.Json.dll
-C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\SimpleThreadMonitor.dll
-C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\SocketIOSharp.dll
-C:\Users\abbas\RiderProjects\ChatApplication\ChatApplication\bin\Debug\net9.0\WebSocketSharp.CustomHeaders.CustomHttpServer.dll

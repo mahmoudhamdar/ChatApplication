@@ -1,39 +1,47 @@
 "use client"
-import {useEffect, useState} from "react"
+import {use, useEffect, useState} from "react"
 import "./ChatRooms.css"
 import "./ChatRoom.css"
 import {ChatRoom} from "@/components/ChatRoom/ChatRoom";
-import {UseUser} from "@/Stores/StoreUses/UseUser";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
+import {api, axiosPrivate} from "@/Services/ApiService";
 
 
 
 
 
 
-export const ChatRooms = (props) => {
-    const [chatRooms, setChatRooms] = useState<UserChatRoomType[]>([])
+
+export const ChatRooms = () => {
+    const [chatRooms, setChatRooms] = useState<ChatRoomType[]>([])
     const [activeChatRoomId, setActiveChatRoomId] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(true)
 
-    const {user} = UseUser()
+    const {user} = useUser()
 
     useEffect(() => {
+        
 
-
+        const filteredChatRooms:ChatRoomType[] =use(getChatroom())
+        
         setIsLoading(true)
 
-        try {
-            console.log(props.chatRooms)    
+       
+            console.log(filteredChatRooms)    
             
-            setChatRooms(props.chatRooms)
-            if (props.length > 0 && !activeChatRoomId) {
+            setChatRooms(filteredChatRooms)
+            if (filteredChatRooms.length > 0 && !activeChatRoomId) {
                 // @ts-ignore
                 setActiveChatRoomId(props[0].roomId)
             }
-        } finally {
+    
             setIsLoading(false)
+        
+        
+        async function getChatroom(){
+            const response =  await axiosPrivate(`${api}/chatroom/${user.id}`)
+            return response.data   
         }
-
 
     }, [])
 

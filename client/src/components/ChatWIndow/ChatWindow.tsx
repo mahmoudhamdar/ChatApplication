@@ -2,10 +2,11 @@
 import {Messages} from "../Messages/Messages"
 import {MessageInput} from "../Messages/MessageInput"
 import "./Window.css"
-import UseRoom from "@/Stores/StoreUses/UseRoom";
+import {useRoom} from "@/Stores/Providers/RoomStoreProvider";
+
 
 export const ChatWindow = () => {
-    const {roomName, roomId} = UseRoom()
+    const {roomName, roomId} = useRoom()
 
     if (!roomId) {
         return (

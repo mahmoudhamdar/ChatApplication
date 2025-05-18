@@ -47,37 +47,6 @@
           }
         }
       },
-      "EmitterSharp/1.1.1.1": {
-        "type": "package",
-        "dependencies": {
-          "SimpleThreadMonitor": "1.0.2.1"
-        },
-        "compile": {
-          "lib/netcoreapp3.0/EmitterSharp.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/EmitterSharp.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
-      "EngineIOSharp2/2.0.0.4": {
-        "type": "package",
-        "dependencies": {
-          "EmitterSharp": "1.1.1.1",
-          "Newtonsoft.Json": "13.0.3",
-          "SimpleThreadMonitor": "1.0.2.1",
-          "WebSocketSharp.CustomHeaders.CustomHttpServer": "1.0.2.3"
-        },
-        "compile": {
-          "lib/net6.0/EngineIOSharp.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/EngineIOSharp.dll": {}
-        }
-      },
       "FastEndpoints/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -1188,32 +1157,6 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "SimpleThreadMonitor/1.0.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/SimpleThreadMonitor.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/SimpleThreadMonitor.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
       "SocketIO.Core/3.1.2": {
         "type": "package",
         "compile": {
@@ -1264,18 +1207,6 @@
           "lib/net6.0/SocketIOClient.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "SocketIOSharp2/2.0.5": {
-        "type": "package",
-        "dependencies": {
-          "EngineIOSharp2": "2.0.0.4"
-        },
-        "compile": {
-          "lib/net6.0/SocketIOSharp.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/SocketIOSharp.dll": {}
         }
       },
       "System.ClientModel/1.0.0": {
@@ -1870,19 +1801,6 @@
             "rid": "win"
           }
         }
-      },
-      "WebSocketSharp.CustomHeaders.CustomHttpServer/1.0.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/WebSocketSharp.CustomHeaders.CustomHttpServer.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/WebSocketSharp.CustomHeaders.CustomHttpServer.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
       }
     }
   },
@@ -1923,50 +1841,6 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
-      ]
-    },
-    "EmitterSharp/1.1.1.1": {
-      "sha512": "DeLFZVYsMAn3tu80aEbzrZkhD+ka53fcU2+Iw6PGjVplVMrWi0GnpGU2Mg7ixYVxSTCOJtcot5Hr57iz6Xxnlw==",
-      "type": "package",
-      "path": "emittersharp/1.1.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "emittersharp.1.1.1.1.nupkg.sha512",
-        "emittersharp.nuspec",
-        "lib/net40/EmitterSharp.dll",
-        "lib/net40/EmitterSharp.pdb",
-        "lib/net45/EmitterSharp.dll",
-        "lib/net45/EmitterSharp.pdb",
-        "lib/netcoreapp2.0/EmitterSharp.dll",
-        "lib/netcoreapp2.0/EmitterSharp.pdb",
-        "lib/netcoreapp3.0/EmitterSharp.dll",
-        "lib/netcoreapp3.0/EmitterSharp.pdb",
-        "lib/netstandard2.0/EmitterSharp.dll",
-        "lib/netstandard2.0/EmitterSharp.pdb",
-        "src/EmitterSharp/Emitter.cs",
-        "src/EmitterSharp/EmitterSharp.csproj",
-        "src/EmitterSharp/Listener.cs",
-        "src/EmitterSharp/Properties/AssemblyInfo.cs"
-      ]
-    },
-    "EngineIOSharp2/2.0.0.4": {
-      "sha512": "+beYzrI+6N53p7ArdPv6f9wdTpa8DQfamx6+pb7yx5AbVKR0LWJkDzHzy0ZX+9LCFzQkGnF5naRm4KvMEGcNfw==",
-      "type": "package",
-      "path": "engineiosharp2/2.0.0.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "engineiosharp2.2.0.0.4.nupkg.sha512",
-        "engineiosharp2.nuspec",
-        "icon.png",
-        "lib/net40/EngineIOSharp.dll",
-        "lib/net45/EngineIOSharp.dll",
-        "lib/net6.0/EngineIOSharp.dll",
-        "lib/netcoreapp2.1/EngineIOSharp.dll",
-        "lib/netcoreapp3.1/EngineIOSharp.dll",
-        "lib/netstandard2.0/EngineIOSharp.dll"
       ]
     },
     "FastEndpoints/6.0.0": {
@@ -3970,60 +3844,6 @@
         "netcoreserver.nuspec"
       ]
     },
-    "Newtonsoft.Json/13.0.3": {
-      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
-      "type": "package",
-      "path": "newtonsoft.json/13.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "README.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/net6.0/Newtonsoft.Json.dll",
-        "lib/net6.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.3.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "packageIcon.png"
-      ]
-    },
-    "SimpleThreadMonitor/1.0.2.1": {
-      "sha512": "UrJWDqlYRncLH36dEo755JoHIHs8KwpU1C7TCh4vTF6nusyUZMwGOfB750NYugGieqFRU9pepGaAKA3yOXONKw==",
-      "type": "package",
-      "path": "simplethreadmonitor/1.0.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/SimpleThreadMonitor.dll",
-        "lib/net40/SimpleThreadMonitor.pdb",
-        "lib/net45/SimpleThreadMonitor.dll",
-        "lib/net45/SimpleThreadMonitor.pdb",
-        "lib/netcoreapp2.0/SimpleThreadMonitor.dll",
-        "lib/netcoreapp2.0/SimpleThreadMonitor.pdb",
-        "lib/netcoreapp3.0/SimpleThreadMonitor.dll",
-        "lib/netcoreapp3.0/SimpleThreadMonitor.pdb",
-        "lib/netstandard2.0/SimpleThreadMonitor.dll",
-        "lib/netstandard2.0/SimpleThreadMonitor.pdb",
-        "simplethreadmonitor.1.0.2.1.nupkg.sha512",
-        "simplethreadmonitor.nuspec",
-        "src/SimpleThreadMonitor/Properties/AssemblyInfo.cs",
-        "src/SimpleThreadMonitor/SimpleMutex.cs",
-        "src/SimpleThreadMonitor/SimpleThreadMonitor.csproj"
-      ]
-    },
     "SocketIO.Core/3.1.2": {
       "sha512": "tb6vZ7DYhZooRGLHTPK7/Gifbu+kHbkQRbsee0LAnI28pWc5+Br+juh4pvid3kfIrGTl5dzAfy5huLELVU4svA==",
       "type": "package",
@@ -4075,24 +3895,6 @@
         "lib/netstandard2.0/SocketIOClient.xml",
         "socketioclient.3.1.2.nupkg.sha512",
         "socketioclient.nuspec"
-      ]
-    },
-    "SocketIOSharp2/2.0.5": {
-      "sha512": "fhR1QKq0evI67pU69DSClFzW5qadzQIyAfzqBp6qRvUVRgud+hjyytsu6vl3GhvOJVh8VPnVOSlwRLtjeDBXjA==",
-      "type": "package",
-      "path": "socketiosharp2/2.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "icon.png",
-        "lib/net40/SocketIOSharp.dll",
-        "lib/net45/SocketIOSharp.dll",
-        "lib/net6.0/SocketIOSharp.dll",
-        "lib/netcoreapp3.1/SocketIOSharp.dll",
-        "lib/netstandard2.0/SocketIOSharp.dll",
-        "socketiosharp2.2.0.5.nupkg.sha512",
-        "socketiosharp2.nuspec"
       ]
     },
     "System.ClientModel/1.0.0": {
@@ -5120,110 +4922,6 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "WebSocketSharp.CustomHeaders.CustomHttpServer/1.0.2.3": {
-      "sha512": "Mf7z030hh+zyf+yMRcpcXG6MaApqNOjR9bsZKhXLa2054q8jiE/1DHG8uVNDmcpVpv3uTTDV0FFA3q1iukVACg==",
-      "type": "package",
-      "path": "websocketsharp.customheaders.customhttpserver/1.0.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/WebSocketSharp.CustomHeaders.CustomHttpServer.dll",
-        "lib/net40/WebSocketSharp.CustomHeaders.CustomHttpServer.pdb",
-        "lib/net40/WebSocketSharp.CustomHeaders.CustomHttpServer.xml",
-        "lib/net45/WebSocketSharp.CustomHeaders.CustomHttpServer.dll",
-        "lib/net45/WebSocketSharp.CustomHeaders.CustomHttpServer.pdb",
-        "lib/net45/WebSocketSharp.CustomHeaders.CustomHttpServer.xml",
-        "lib/netcoreapp2.0/WebSocketSharp.CustomHeaders.CustomHttpServer.dll",
-        "lib/netcoreapp2.0/WebSocketSharp.CustomHeaders.CustomHttpServer.pdb",
-        "lib/netcoreapp2.0/WebSocketSharp.CustomHeaders.CustomHttpServer.xml",
-        "lib/netcoreapp3.0/WebSocketSharp.CustomHeaders.CustomHttpServer.dll",
-        "lib/netcoreapp3.0/WebSocketSharp.CustomHeaders.CustomHttpServer.pdb",
-        "lib/netcoreapp3.0/WebSocketSharp.CustomHeaders.CustomHttpServer.xml",
-        "lib/netstandard2.0/WebSocketSharp.CustomHeaders.CustomHttpServer.dll",
-        "lib/netstandard2.0/WebSocketSharp.CustomHeaders.CustomHttpServer.pdb",
-        "lib/netstandard2.0/WebSocketSharp.CustomHeaders.CustomHttpServer.xml",
-        "src/websocket-sharp/ByteOrder.cs",
-        "src/websocket-sharp/CloseEventArgs.cs",
-        "src/websocket-sharp/CloseStatusCode.cs",
-        "src/websocket-sharp/CompressionMethod.cs",
-        "src/websocket-sharp/ErrorEventArgs.cs",
-        "src/websocket-sharp/Ext.cs",
-        "src/websocket-sharp/Fin.cs",
-        "src/websocket-sharp/HttpBase.cs",
-        "src/websocket-sharp/HttpRequest.cs",
-        "src/websocket-sharp/HttpResponse.cs",
-        "src/websocket-sharp/LogData.cs",
-        "src/websocket-sharp/LogLevel.cs",
-        "src/websocket-sharp/Logger.cs",
-        "src/websocket-sharp/Mask.cs",
-        "src/websocket-sharp/MessageEventArgs.cs",
-        "src/websocket-sharp/Net/AuthenticationBase.cs",
-        "src/websocket-sharp/Net/AuthenticationChallenge.cs",
-        "src/websocket-sharp/Net/AuthenticationResponse.cs",
-        "src/websocket-sharp/Net/AuthenticationSchemes.cs",
-        "src/websocket-sharp/Net/Chunk.cs",
-        "src/websocket-sharp/Net/ChunkStream.cs",
-        "src/websocket-sharp/Net/ChunkedRequestStream.cs",
-        "src/websocket-sharp/Net/ClientSslConfiguration.cs",
-        "src/websocket-sharp/Net/Cookie.cs",
-        "src/websocket-sharp/Net/CookieCollection.cs",
-        "src/websocket-sharp/Net/CookieException.cs",
-        "src/websocket-sharp/Net/EndPointListener.cs",
-        "src/websocket-sharp/Net/EndPointManager.cs",
-        "src/websocket-sharp/Net/HttpBasicIdentity.cs",
-        "src/websocket-sharp/Net/HttpConnection.cs",
-        "src/websocket-sharp/Net/HttpDigestIdentity.cs",
-        "src/websocket-sharp/Net/HttpHeaderInfo.cs",
-        "src/websocket-sharp/Net/HttpHeaderType.cs",
-        "src/websocket-sharp/Net/HttpListener.cs",
-        "src/websocket-sharp/Net/HttpListenerAsyncResult.cs",
-        "src/websocket-sharp/Net/HttpListenerContext.cs",
-        "src/websocket-sharp/Net/HttpListenerException.cs",
-        "src/websocket-sharp/Net/HttpListenerPrefix.cs",
-        "src/websocket-sharp/Net/HttpListenerPrefixCollection.cs",
-        "src/websocket-sharp/Net/HttpListenerRequest.cs",
-        "src/websocket-sharp/Net/HttpListenerResponse.cs",
-        "src/websocket-sharp/Net/HttpRequestHeader.cs",
-        "src/websocket-sharp/Net/HttpResponseHeader.cs",
-        "src/websocket-sharp/Net/HttpStatusCode.cs",
-        "src/websocket-sharp/Net/HttpStreamAsyncResult.cs",
-        "src/websocket-sharp/Net/HttpUtility.cs",
-        "src/websocket-sharp/Net/HttpVersion.cs",
-        "src/websocket-sharp/Net/InputChunkState.cs",
-        "src/websocket-sharp/Net/InputState.cs",
-        "src/websocket-sharp/Net/LineState.cs",
-        "src/websocket-sharp/Net/NetworkCredential.cs",
-        "src/websocket-sharp/Net/QueryStringCollection.cs",
-        "src/websocket-sharp/Net/ReadBufferState.cs",
-        "src/websocket-sharp/Net/RequestStream.cs",
-        "src/websocket-sharp/Net/ResponseStream.cs",
-        "src/websocket-sharp/Net/ServerSslConfiguration.cs",
-        "src/websocket-sharp/Net/WebHeaderCollection.cs",
-        "src/websocket-sharp/Net/WebSockets/HttpListenerWebSocketContext.cs",
-        "src/websocket-sharp/Net/WebSockets/TcpListenerWebSocketContext.cs",
-        "src/websocket-sharp/Net/WebSockets/WebSocketContext.cs",
-        "src/websocket-sharp/Opcode.cs",
-        "src/websocket-sharp/PayloadData.cs",
-        "src/websocket-sharp/Rsv.cs",
-        "src/websocket-sharp/Server/HttpRequestEventArgs.cs",
-        "src/websocket-sharp/Server/HttpServer.cs",
-        "src/websocket-sharp/Server/IWebSocketSession.cs",
-        "src/websocket-sharp/Server/ServerState.cs",
-        "src/websocket-sharp/Server/WebSocketBehavior.cs",
-        "src/websocket-sharp/Server/WebSocketServer.cs",
-        "src/websocket-sharp/Server/WebSocketServiceHost.cs",
-        "src/websocket-sharp/Server/WebSocketServiceHost`1.cs",
-        "src/websocket-sharp/Server/WebSocketServiceManager.cs",
-        "src/websocket-sharp/Server/WebSocketSessionManager.cs",
-        "src/websocket-sharp/WebSocket.cs",
-        "src/websocket-sharp/WebSocketException.cs",
-        "src/websocket-sharp/WebSocketFrame.cs",
-        "src/websocket-sharp/WebSocketSharp.CustomHeaders.CustomHttpServer.csproj",
-        "src/websocket-sharp/WebSocketState.cs",
-        "websocketsharp.customheaders.customhttpserver.1.0.2.3.nupkg.sha512",
-        "websocketsharp.customheaders.customhttpserver.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -5236,8 +4934,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.4",
       "NetCoreServer >= 8.0.7",
-      "SocketIOClient >= 3.1.2",
-      "SocketIOSharp2 >= 2.0.5"
+      "SocketIOClient >= 3.1.2"
     ]
   },
   "packageFolders": {
@@ -5328,10 +5025,6 @@
           "SocketIOClient": {
             "target": "Package",
             "version": "[3.1.2, )"
-          },
-          "SocketIOSharp2": {
-            "target": "Package",
-            "version": "[2.0.5, )"
           }
         },
         "imports": [

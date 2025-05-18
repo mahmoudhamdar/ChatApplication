@@ -1,12 +1,12 @@
 "use client"
-import {UseUser} from "@/Stores/StoreUses/UseUser";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {UserProfileToken} from "@/Models/User";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
 
 
 export const User = (props:UserProfileToken)=>{
     
-    const {user} = UseUser()
+    const {user} = useUser()
     
     async function handleClick(){
         

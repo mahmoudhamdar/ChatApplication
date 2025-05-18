@@ -17,7 +17,7 @@ export const RoomStoreProvider: React.FC<RoomStoreProviderProps> = ({children}) 
     return <RoomStoreContext.Provider value={store}>{children}</RoomStoreContext.Provider>;
 }
 
-export const useRoomStoreContext = (): RoomStoreState => {
+export const useRoom = (): RoomStoreState => {
     const context = useContext(RoomStoreContext);
     if (context === undefined) {
         throw new Error('useStoreContext must be used within a StoreProvider');

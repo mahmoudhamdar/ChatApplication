@@ -1,3 +1,5 @@
+"use client"
+
 import React, {createContext, ReactNode, useContext} from 'react';
 import {IdStoreState, useIdStore,} from "@/Stores/IdStore"
 
@@ -19,7 +21,7 @@ export const UserStoreProvider: React.FC<StoreProviderProps> = ({children}) => {
 };
 
 
-export const useUserStoreContext = (): IdStoreState => {
+export const useUser = (): IdStoreState => {
     const context = useContext(UserStoreContext);
     if (context === undefined) {
         throw new Error('useStoreContext must be used within a StoreProvider');

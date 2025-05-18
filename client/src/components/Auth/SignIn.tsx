@@ -1,12 +1,13 @@
 "use client"
 
-import {UseUser} from "@/Stores/StoreUses/UseUser";
+
 import {useRouter} from "next/navigation";
 import {z} from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import Link from "next/link";
 import {loginApi} from "@/Services/UserApiService";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
 
 export const SignIn = () => {
 
@@ -14,7 +15,7 @@ export const SignIn = () => {
         username: string
         password: string
     }
-    const {setUser}=UseUser()
+    const {setUser}=useUser()
     const router =useRouter()
     const schema = z.object({
         username: z.string(),
@@ -32,7 +33,8 @@ export const SignIn = () => {
             .then((re:any) => re.data)
             if (response && response && response.id) {
                 setUser(response);
-
+                router.push("/account")
+                
             } else {
                 console.error("Login failed: Response or ID is undefined");
                 // You might want to show an error message to the user here
@@ -41,7 +43,7 @@ export const SignIn = () => {
             console.error("Login error:", error);
             // Handle login error (show message to user)
         }
-        router.push("/account")
+       
     };
 
     return (

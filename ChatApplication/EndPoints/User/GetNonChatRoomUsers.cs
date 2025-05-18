@@ -1,4 +1,5 @@
 using FastEndpoints;
+using Microsoft.AspNetCore.Http.HttpResults;
 using WebApplication1.DTOs.UserDTO;
 using WebApplication1.Mappers.Mapping;
 using WebApplication1.Repository.IRepository;
@@ -7,7 +8,7 @@ namespace WebApplication1.EndPoints.User;
 
 
     
-    public class GetNonChatRoomUsers : Ep.NoReq.Res<IEnumerable<UserResponse>>
+    public class GetNonChatRoomUsers : Ep.NoReq.Res<Results<Ok<IEnumerable<UserResponse>>,NotFound>>
     {
         
         private readonly IUnitOfWork _unitOfWork;
@@ -26,8 +27,8 @@ namespace WebApplication1.EndPoints.User;
             AllowAnonymous();
         }
 
-        public override async Task HandleAsync( CancellationToken ct)
-        {
+        public override async Task<Results<Ok<IEnumerable<UserResponse>>, NotFound>> ExecuteAsync( CancellationToken ct)
+        { 
             var id = Route<string>("id");
             
             var userChatRoomsRes = await _unitOfWork
@@ -38,7 +39,7 @@ namespace WebApplication1.EndPoints.User;
                 .Select(x=>x.RoomId).ToList();
 
             if (userChatRooms is null)
-                await SendErrorsAsync(401, ct);
+               return TypedResults.NotFound();
 
             var userList = userChatRoomsRes.Where(x =>ChatRoomsList.Contains(x.RoomId))
                 .Select(x => x.UserId).ToList();
@@ -46,12 +47,12 @@ namespace WebApplication1.EndPoints.User;
             var usersNotInChatRoom = await _unitOfWork.UserRepository
                 .GetAsync(x => !userList.Contains(x.Id));
             if (usersNotInChatRoom is null)
-                await SendErrorsAsync( 400,ct);
+               return TypedResults.NotFound();
 
             var response =_userMapper.UserMapper.UserToResponses(usersNotInChatRoom);
             
-            await SendAsync(response, 200, ct);
-
-
+           return TypedResults.Ok(response);
+           
         }
+
     }

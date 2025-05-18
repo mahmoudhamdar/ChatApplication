@@ -3,10 +3,12 @@
 
 import "./ChatRoom.css"
 import {useEffect, useState} from "react"
-import UseRoom from "@/Stores/StoreUses/UseRoom";
+
 import {api, axiosPrivate} from "@/Services/ApiService";
-import {UseUser} from "@/Stores/StoreUses/UseUser";
+
 import {user} from "@/components/AddConversation";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
+import {useRoom} from "@/Stores/Providers/RoomStoreProvider";
 
 export const ChatRoom = ({
                              roomId,
@@ -18,8 +20,8 @@ export const ChatRoom = ({
     isActive: boolean
     setActiveChatRoomAction: (roomId: string) => void
 }) => {
-    const {setRoomId,setRoomName} = UseRoom()
-    const {user} = UseUser()
+    const {setRoomId,setRoomName} = useRoom()
+    const {user} = useUser()
     const [OtherUser, setOtherUser] = useState<user>()
     useEffect(() => {
         

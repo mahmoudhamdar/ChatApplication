@@ -1,22 +1,27 @@
 "use client"
 
 import {useState} from "react"
-import {useRoomStoreContext} from "@/Stores/Providers/RoomStoreProvider"
+import {useRoom} from "@/Stores/Providers/RoomStoreProvider"
 import {socket} from "@/Socket/socket"
 import {api, axiosPrivate} from "@/Services/ApiService"
 import "./MessageInput.css"
-import {UseUser} from "@/Stores/StoreUses/UseUser";
+import {useUser} from "@/Stores/Providers/UserStoreProvider";
 
+import {user} from "@/components/AddConversation";
 export const MessageInput = () => {
     const [message, setMessage] = useState<string>("")
     const [isSending, setIsSending] = useState(false)
-    const {user} = UseUser()
-    const {roomId} = useRoomStoreContext()
+    const {user} = useUser()
+    const {roomId} = useRoom()
 
-    const sendMessage = (messageContent: string) => {
+    const  sendMessage = async (messageContent: string) => {
         if (!user?.id || !roomId || !messageContent.trim()) {
             return
         }
+        const otherUsers:user[] = await axiosPrivate.get(`${api}/user/otherUser/${roomId}`)
+            .then(res => res.data)
+
+        const  otherUser =otherUsers.filter(User=>User.username!==user.username)[0]
 
         setIsSending(true)
 
@@ -24,6 +29,9 @@ export const MessageInput = () => {
             roomId: roomId,
             content: messageContent,
             userId: user.id,
+            senerId: user.id,
+            receiverId: otherUser.userId,
+            
         }
 
 

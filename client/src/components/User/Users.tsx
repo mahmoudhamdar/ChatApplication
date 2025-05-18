@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react"
-import {useUserStoreContext} from "../../Stores/Providers/UserStoreProvider"
+import {useUser} from "../../Stores/Providers/UserStoreProvider"
 import "..//ChatRoom/ChatRooms.css"
 import {GetAllUsers} from "../../Services/UserApiService.ts";
 import {User} from "./User.tsx";
@@ -15,7 +15,7 @@ export const Users = () => {
     const [activeChatRoomId, setActiveChatRoomId] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(true)
 
-    const {user} = useUserStoreContext()
+    const {user} = useUser()
 
     useEffect(() => {
         setIsLoading(true)
