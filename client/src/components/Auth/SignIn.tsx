@@ -8,6 +8,8 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import Link from "next/link";
 import {loginApi} from "@/Services/UserApiService";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
+import {api, axiosPrivate} from "@/Services/ApiService";
+import {UserProfileToken} from "@/Models/User";
 
 export const SignIn = () => {
 
@@ -29,7 +31,9 @@ export const SignIn = () => {
     const onSubmit = async (values: Values) => {
         try {
            
-            const response= await  loginApi(values.username,values.password)
+            const response:UserProfileToken = await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
+                username: values.username,
+                password: values.password,})
             .then((re:any) => re.data)
             if (response && response && response.id) {
                 setUser(response);

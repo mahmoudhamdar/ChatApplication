@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using WebApplication1.DTOs.UserDTO;
 using WebApplication1.Mappers.Mapping;
 using WebApplication1.Repository.IRepository;
+using ZLinq;
+
 
 namespace WebApplication1.EndPoints.User;
 
@@ -34,14 +36,14 @@ namespace WebApplication1.EndPoints.User;
             var userChatRoomsRes = await _unitOfWork
                 .UserChatRoomRepository
                 .GetallAsync();
-            var userChatRooms = userChatRoomsRes.Where(x=>x.UserId.Equals(id)).ToList();
-            var ChatRoomsList = userChatRooms
+            var userChatRooms = userChatRoomsRes.AsValueEnumerable().Where(x=>x.UserId.Equals(id)).ToList();
+            var ChatRoomsList = userChatRooms.AsValueEnumerable()
                 .Select(x=>x.RoomId).ToList();
 
             if (userChatRooms is null)
                return TypedResults.NotFound();
 
-            var userList = userChatRoomsRes.Where(x =>ChatRoomsList.Contains(x.RoomId))
+            var userList = userChatRoomsRes.AsValueEnumerable().Where(x =>ChatRoomsList.Contains(x.RoomId))
                 .Select(x => x.UserId).ToList();
           
             var usersNotInChatRoom = await _unitOfWork.UserRepository

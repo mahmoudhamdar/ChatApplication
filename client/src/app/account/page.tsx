@@ -8,7 +8,7 @@ import {AddConversation} from "@/components/AddConversation";
 
 /*
 
-export async function fetchChatRooms ()  {
+export async function fetchChatRooms (){
     
     const response = await axiosPrivate(`${api}/chatroom`)
     return response.data   

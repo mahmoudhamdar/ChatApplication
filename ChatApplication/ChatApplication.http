@@ -27,7 +27,15 @@ Accept: application/json
 
 ###
 
-GET {{ChatApplication_HostAddress}}/api/user/otherUser/2cca3a0e-16e4-4dd4-bee5-a1368db03c10
+POST {{ChatApplication_HostAddress}}/api/user/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username":"Ali" ,
+  "passward":"Vendetta007*"
+  
+}
 
 
 

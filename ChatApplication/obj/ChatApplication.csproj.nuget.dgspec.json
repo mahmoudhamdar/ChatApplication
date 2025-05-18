@@ -88,6 +88,10 @@
             "SocketIOClient": {
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "ZLinq": {
+              "target": "Package",
+              "version": "[1.4.5, )"
             }
           },
           "imports": [
