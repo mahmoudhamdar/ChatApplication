@@ -4,6 +4,7 @@
     <attachedFolders />
     <explicitIncludes>
       <Path>client</Path>
+      <Path>frontend</Path>
       <Path>nodeserver</Path>
     </explicitIncludes>
     <explicitExcludes />

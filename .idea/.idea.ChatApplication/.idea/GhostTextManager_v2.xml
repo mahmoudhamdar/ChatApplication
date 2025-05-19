@@ -28,6 +28,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="Error fetching messages: RangeError: Maximum call stack size exceeded">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747651700778" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="How To set up socket.IO connection with asp.net backend and react frontend">
           <value>
             <GhostTextMetaData>
@@ -52,6 +64,19 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="InnerLayoutRouter&#10;.next\static\chunks\node_modules__pnpm_4601bda3._.js (1081:55)&#10;OuterLayoutRouter&#10;.next\static\chunks\node_modules__pnpm_4601bda3._.js (1229:73)\">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="2.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747640712267" />
+                  <option value="1747640687105" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="Pdb file for assembly C:\Program Files\dotnet\shared\Microsoft.NETCore.App\9.0.4\System.Private.CoreLib.dll was not found or failed to read">
           <value>
             <GhostTextMetaData>
@@ -59,6 +84,30 @@
               <option name="timestamps">
                 <list>
                   <option value="1746961669355" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="TypeError: network error&#10;    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules__pnpm_4601bda3._.js:1081:55)&#10;    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules__pnpm_4601bda3._.js:1229:73)">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747640376644" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="TypeError: network error&#10;    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules__pnpm_4601bda3._.js:1081:55)&#10;    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules__pnpm_4601bda3._.js:1229:73)@page.tsx">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747640512933" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -83,6 +132,30 @@
               <option name="timestamps">
                 <list>
                   <option value="1746962160740" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="after I click on add conversation button it does not shows anything">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747648923102" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to add triggers in powerpoint">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747640948643" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -131,6 +204,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1746961149277" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why the users are being displayed">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747645943253" />
                 </list>
               </option>
             </GhostTextMetaData>

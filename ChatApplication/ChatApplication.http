@@ -14,7 +14,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "Username": "Zahraa",
+  "Username": "Hassan",
   "Email": "mahmoud.hamdar@gmail.com",
   "Password": "Vendetta007*"
   
@@ -37,7 +37,19 @@ Accept: application/json
   
 }
 
+###
+POST {{ChatApplication_HostAddress}}/api/message
+Content-Type: application/json
+Accept: application/json
 
+{
+  "RoomId":"6e00611b-24a4-4786-9f3a-a4689efbd2bb" ,
+  "Content":"Hello World",
+  "UserId":"72d31c29-2f37-4a6e-9c6c-e0973d1d93cc" ,
+  "senderId":"72d31c29-2f37-4a6e-9c6c-e0973d1d93cc",
+  "recieverId":"09d47d02-9e77-408a-9fc6-9cf041e4f057"
+  
+}
 
 
 

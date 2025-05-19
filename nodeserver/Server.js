@@ -20,6 +20,7 @@ io.on("connection", (socket) => {
 
     socket.on("messageReceive", (data) => {
         messages.push(data);
+       
         emit()
 
     })
