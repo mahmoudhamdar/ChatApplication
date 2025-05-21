@@ -9,12 +9,15 @@ import {use} from "react";
 
 
 
-export  function fetchChatRooms (){
-    
-    const response = use (axiosPrivate(`${api}/chatroom`))
-    return response.data   
-}
+export  async function fetchChatRooms (id: string): Promise<ChatRoomType[]> {
 
+
+    const response = await axiosPrivate.get<ChatRoomType[]>(`${api}/chatroom/${id}`)
+        .then(res => res.data)
+    console.log(response)
+    return response
+
+}
 
 export async function fetchMessages (roomId: string) {
 
@@ -25,30 +28,32 @@ export async function fetchMessages (roomId: string) {
 
 
 
-export default async  function account() {
+export default async  function account({params}: {params: { id: string }}) {
 
-    const chatRooms:ChatRoomType[] = fetchChatRooms()
-    
-  
-    
+    const userId = params.id
+
+    const chatRooms:ChatRoomType[] = await fetchChatRooms(userId)
+
+    console.log(chatRooms)
+
     return (
-        
-        
+
+
         <div className="app-container">
-            
+
             <button className="mobile-menu-button" >
                 {"☰"}
             </button>
 
-           
+
             <div className={`sidebar`}>
-                <ChatRooms />
+                <ChatRooms  chatRooms={chatRooms} />
             </div>
-        
+
             <div className="sidebar-overlay">
                 <AddConversation/>
             </div>
-            
+
             <div className="main-content">
                 <ChatWindow/>
             </div>

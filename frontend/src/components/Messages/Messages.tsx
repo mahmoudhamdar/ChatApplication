@@ -1,5 +1,5 @@
 "use client"
-import {useEffect, useRef, useState} from "react"
+import {use, useEffect, useRef, useState} from "react"
 import {Message} from "./Message"
 
 import {GetMessage} from "@/Services/MessageApiService"
@@ -32,13 +32,14 @@ export const Messages = () => {
         messagesEndRef.current?.scrollIntoView({behavior: "smooth"})
     }
 
+   
+    
+    
     useEffect(() => {
       
         if (roomId) {
-      
             setIsLoading(true)
-           
-            GetMessage(roomId)
+            axiosPrivate.get(`${api}/message/${roomId}`)
                 .then((response) => {
                         // @ts-ignore
                     console.log(response.data)
@@ -56,21 +57,18 @@ export const Messages = () => {
         }
 
         function handleNewMessage(message: MessageType[]) {
-            console.log("Received message:", message)
-            const roomMessages = message.filter((msg) => msg.roomId === roomId)
-            if (roomMessages.length > 0) {
-                setMessages((prevMessages) => [...prevMessages, ...roomMessages])
-            }
-           
+            console.log(" messages:", message)
+            console.log("room" + roomId)
+            const roomMessages: MessageType[] = message.filter((msg: MessageType) => msg.roomId === roomId)
+            console.log("Room messages:", roomMessages)
+            setMessages((prevMessages) => [...prevMessages, ...roomMessages])
+           console.log(messages)
         }
 
         socket.on("messageSend", handleNewMessage)
 
         // Add cleanup function to remove event listener when component unmounts or roomId changes
-        return () => {
-            socket.off("messageSend", handleNewMessage)
-        }
-
+        
     }, [roomId])
 
     useEffect(() => {

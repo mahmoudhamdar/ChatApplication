@@ -9,10 +9,13 @@ import {use} from "react";
 
 
 
-export  async function fetchChatRooms () {
+export  async function fetchChatRooms (id: string): Promise<ChatRoomType[]> {
+    
 
-    const response = await axiosPrivate.get(`${api}/chatroom`)
-    return response.data
+    const response = await axiosPrivate.get<ChatRoomType[]>(`${api}/chatroom/${id}`)
+        .then(res => res.data)
+    console.log(response)
+    return response
 
 }
 
@@ -25,12 +28,14 @@ export async function fetchMessages (roomId: string) {
 
 
 
-export default async  function account() {
+export default async  function account({params}: {params: { id: string }}) {
 
-    //const chatRooms:ChatRoomType[] = fetchChatRooms()
+    const userId = params.id
     
-  
+    const chatRooms:ChatRoomType[] = await fetchChatRooms(userId)
     
+  console.log(chatRooms)
+   
     return (
         
         
@@ -42,7 +47,7 @@ export default async  function account() {
 
            
             <div className={`sidebar`}>
-                <ChatRooms />
+                <ChatRooms  chatRooms={chatRooms} />
             </div>
         
             <div className="sidebar-overlay">

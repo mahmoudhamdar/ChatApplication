@@ -42,7 +42,7 @@ export const Register = () => {
     const onSubmit = async (value: Values) => {
         console.log(value);
 
-        const data:UserProfileToken = await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
+        const response:UserProfileToken = await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
             username: value.username,
             password: value.password,
             email: value.email,
@@ -51,10 +51,10 @@ export const Register = () => {
             setUser(res.data)
             return res.data;
         });
-        console.log(data);
+        console.log(response);
       
         
-        router.push("/account")
+        router.push(`/account/${response.id}`)
 
     }
 

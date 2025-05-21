@@ -17,11 +17,11 @@ export interface user {
  
 export const AddConversation = () => {
     
-  // const [show,setShow] = useState(true)
+  
     const {user} = useUser()
     const [users,setUsers] = useState<UserProfileToken[]>([])
     const [loading, setLoading] = useState(false)
-
+    const [show, setShow] = useState<boolean>(true)
     async function fetchUsers() {
         
         const users:UserProfileToken[]= await axiosPrivate.get(`${api}/user/noChatRoomUsers/${user.id}`)
@@ -47,6 +47,8 @@ export const AddConversation = () => {
         console.error("Error fetching users:", error)
       } finally {
         setLoading(false)
+          setShow(true)
+         
       }
   } 
      
@@ -58,10 +60,9 @@ export const AddConversation = () => {
             <div>
             {loading ? (
               <p>Loading users...</p>
-            ) : (
-              users.map((user:UserProfileToken) => {
-                return <User id={user.id} username={user.username} key={user.id} email={""} token={""} />}
-              )
+            ) : (show && users.map((user:UserProfileToken) => {
+                return <User id={user.id} username={user.username} key={user.id} email={""} token={""} show={show} setShow={setShow} />}
+            )
             )}
                
             </div>

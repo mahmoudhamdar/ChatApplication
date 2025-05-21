@@ -64,6 +64,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="If I move the page to [id] how does next.js detect userId">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747826385639" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="InnerLayoutRouter&#10;.next\static\chunks\node_modules__pnpm_4601bda3._.js (1081:55)&#10;OuterLayoutRouter&#10;.next\static\chunks\node_modules__pnpm_4601bda3._.js (1229:73)\">
           <value>
             <GhostTextMetaData>
@@ -84,6 +96,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1746961669355" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="TypeError: Cannot read properties of undefined (reading 'roomId')&#10;    at ChatRooms.useEffect (http://localhost:3000/_next/static/chunks/src_df2a3c1e._.js:182:46)&#10;    at account (rsc://React/Server/C:%5CUsers%5Cabbas%5CRiderProjects%5CChatApplication%5Cfrontend%5C.next%5Cserver%5Cchunks%5Cssr%5C%5Broot-of-the-server%5D__a413c29b._.js?25:290:405)">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747827229022" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -149,6 +173,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="how can I get the userId to the ccount page">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747826265765" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how to add triggers in powerpoint">
           <value>
             <GhostTextMetaData>
@@ -156,6 +192,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1747640948643" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to pass the Id to the params from signIn or Register">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747826640349" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -192,6 +240,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1747569177832" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why the chatrooms are empty when passed as a props">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747825406281" />
                 </list>
               </option>
             </GhostTextMetaData>

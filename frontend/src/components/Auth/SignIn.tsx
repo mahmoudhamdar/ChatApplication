@@ -40,7 +40,7 @@ export const SignIn = () => {
 
             if (response?.data && response.data.id) {
                 setUser(response.data)
-                router.push("/account")
+                router.push(`/account/${response.data.id}`)
                 
             } else {
                 setError("Login failed. Please check your credentials.")

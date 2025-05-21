@@ -8,11 +8,13 @@ import {api, axiosPrivate} from "@/Services/ApiService";
 
 
 
+interface ChatRoomsProps {
+    chatRooms: ChatRoomType[];
+}
 
 
 
-
-export const ChatRooms = () => {
+export const ChatRooms = (props: ChatRoomsProps ) => {
     const [chatRooms, setChatRooms] = useState<ChatRoomType[]>([])
     const [activeChatRoomId, setActiveChatRoomId] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -21,18 +23,20 @@ export const ChatRooms = () => {
 
     useEffect(() => {
         
-
-          getChatroom()  .catch((e) => {console.error(e)})
+        console.log(props.chatRooms)
         
+        
+         getChatroom().catch((e) => {console.error(e)})
+       
         setIsLoading(true)
 
        
-            console.log(chatRooms)    
+            console.log(props.chatRooms)    
             
-            setChatRooms(chatRooms)
-            if (chatRooms.length > 0 && !activeChatRoomId) {
+            setChatRooms(props.chatRooms)
+            if (props.chatRooms.length > 0 && !activeChatRoomId) {
                 // @ts-ignore
-                setActiveChatRoomId(props[0].roomId)
+                setActiveChatRoomId(props.chatRooms[0].roomId)
             }
     
             setIsLoading(false)
@@ -63,7 +67,7 @@ export const ChatRooms = () => {
                 <div className="no-rooms-message">No chat rooms available</div>
             ) : (
                 <div className="chat-rooms-list">
-                    {chatRooms.map((chatroom) => (
+                    {props.chatRooms.map((chatroom) => (
                         <ChatRoom
                             key={chatroom.roomId}
                             roomId={chatroom.roomId}

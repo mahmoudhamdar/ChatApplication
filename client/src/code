@@ -1,9 +1,0 @@
-  const dataChat = await axiosPrivate.post(api + "/chatroom", {
-            RoomName: value.username,
-            CreatedAt: new Date().toISOString(),
-        }).then((re) => re.data)
-     const t=   await axiosPrivate.post(api + "/userChatroom", {
-            roomId: dataChat.data.roomId,
-            userId: user.id,
-        })
-        console.log(dataChat)
