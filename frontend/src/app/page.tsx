@@ -1,8 +1,6 @@
-
+"use client"
 import Link from "next/link";
 import "@/homeAuthCSS/Home.css"
-import {Postt} from "@/components/swrtest";
-import { GETT } from "@/components/GETT";
 export default  function Home() {
   return (
             <div className="home-container">
@@ -28,13 +26,11 @@ export default  function Home() {
                             <p>Your conversations are encrypted and private</p>
                         </div>
                     </div>
-                   
+
                     <div className="home-actions">
                         <Link href="/login" className="action-button">Login</Link>
                         <Link href="/register" className="action-button secondary">Register</Link>
                     </div>
-                    <Postt/>
-                    <GETT></GETT>
                 </div>
             </div>
         );

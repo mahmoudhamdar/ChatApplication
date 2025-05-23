@@ -12,7 +12,6 @@ export const Message = ({
         <div className={`message ${isOwnMessage ? "own-message" : "other-message"}`}>
             <div className="message-bubble">
                 <p>{content}</p>
-                
             </div>
         </div>
     )
