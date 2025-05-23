@@ -28,8 +28,8 @@ export const MessageInput = () => {
 
         const messageData = {
             RoomId: roomId,
-            Content: messageContent,
-            UserId: user.id,
+            content: messageContent,
+            userId: user.id,
             senderId: user.id,
             recieverId: otherUser.id,
             
@@ -39,7 +39,6 @@ export const MessageInput = () => {
         axiosPrivate.post(`${api}/message`, messageData).catch(e => console.error(e))
         socket.emit("messageReceive", messageData)
         setMessage("")
-
         setIsSending(false)
 
     }

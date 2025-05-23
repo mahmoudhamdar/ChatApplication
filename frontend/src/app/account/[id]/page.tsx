@@ -32,6 +32,8 @@ export default async  function account({params}: {params: { id: string }}) {
 
     const userId = params.id
 
+    
+    
     const chatRooms:ChatRoomType[] = await fetchChatRooms(userId)
 
     console.log(chatRooms)

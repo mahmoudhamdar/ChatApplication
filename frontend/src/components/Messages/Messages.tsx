@@ -12,7 +12,7 @@ import {api, axiosPrivate} from "@/Services/ApiService";
 
 type MessageType = {
     messageId: string
-    roomId: string
+    RoomId: string
     content: string
     userId: string,
     senderId: string,
@@ -31,17 +31,11 @@ export const Messages = () => {
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({behavior: "smooth"})
     }
-
-   
-    
-    
     useEffect(() => {
-      
         if (roomId) {
             setIsLoading(true)
             axiosPrivate.get(`${api}/message/${roomId}`)
                 .then((response) => {
-                        // @ts-ignore
                     console.log(response.data)
                     if (response && response.data) {
                         setMessages(response.data)
@@ -53,19 +47,25 @@ export const Messages = () => {
                 .finally(() => {
                     setIsLoading(false)
                 })
-
         }
-
         function handleNewMessage(message: MessageType[]) {
             console.log(" messages:", message)
             console.log("room" + roomId)
-            const roomMessages: MessageType[] = message.filter((msg: MessageType) => msg.roomId === roomId)
+            const roomMessages: MessageType[] = message.filter((msg: MessageType) => {
+                console.log(msg.RoomId===roomId)
+               return  msg.RoomId === roomId
+            })
             console.log("Room messages:", roomMessages)
-            setMessages((prevMessages) => [...prevMessages, ...roomMessages])
            console.log(messages)
+            setMessages(prevMessages => [...prevMessages, ...roomMessages])
+            console.log("Room messages:", messages)
         }
 
         socket.on("messageSend", handleNewMessage)
+        // Add cleanup function
+        return () => {
+            socket.off("messageSend", handleNewMessage);
+        };
 
         // Add cleanup function to remove event listener when component unmounts or roomId changes
         
@@ -85,6 +85,7 @@ export const Messages = () => {
 
     return (
         <div className="messages-container">
+           
             {messages.length === 0 ? (
                 <div className="no-messages">No messages yet. Start the conversation!</div>
             ) : (

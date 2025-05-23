@@ -101,6 +101,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="TS2769: No overload matches this call.&#10;The last overload gave the following error.&#10;Type () =&gt; Promise&lt;AxiosResponse&lt;any, any&gt;&gt; has no properties in common with type&#10;SWRConfiguration&lt;UserProfileToken, any, BareFetcher&lt;UserProfileToken&gt;&gt;">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747942067952" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="TypeError: Cannot read properties of undefined (reading 'roomId')&#10;    at ChatRooms.useEffect (http://localhost:3000/_next/static/chunks/src_df2a3c1e._.js:182:46)&#10;    at account (rsc://React/Server/C:%5CUsers%5Cabbas%5CRiderProjects%5CChatApplication%5Cfrontend%5C.next%5Cserver%5Cchunks%5Cssr%5C%5Broot-of-the-server%5D__a413c29b._.js?25:290:405)">
           <value>
             <GhostTextMetaData>
@@ -173,6 +185,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="current cached is givong undefined">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747987717748" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how can I get the userId to the ccount page">
           <value>
             <GhostTextMetaData>
@@ -197,6 +221,42 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="how to compare strings in typescript">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747928024772" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to get data from cache in swr">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747943081593" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to ignore files using .gitignore">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747927124569" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how to pass the Id to the params from signIn or Register">
           <value>
             <GhostTextMetaData>
@@ -204,6 +264,30 @@
               <option name="timestamps">
                 <list>
                   <option value="1747826640349" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to read from the cache">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747943367790" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to read the user from cache in GETT component">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747987981697" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -228,6 +312,42 @@
               <option name="timestamps">
                 <list>
                   <option value="1746962299063" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="what is this error S2769: No overload matches this call.&#10;The last overload gave the following error.&#10;Type&#10;(username: string, password: string) =&gt; Promise&lt;AxiosResponse&lt;any, any&gt;&gt;&#10;has no properties in common with type&#10;SWRConfiguration&lt;UserProfileToken, any, BareFetcher&lt;UserProfileToken&gt;&gt;&#10;types.d.mts(192, 5): The last overload is declared here.">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747941873732" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why its  returing false">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747928126922" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why messages becomes empty after I send a message">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1747929920013" />
                 </list>
               </option>
             </GhostTextMetaData>
