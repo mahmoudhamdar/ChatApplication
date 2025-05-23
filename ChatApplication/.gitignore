@@ -1,0 +1,8 @@
+
+
+/bin
+/obj
+/Migration
+
+appsettings.json
+appsettings.Development.json
