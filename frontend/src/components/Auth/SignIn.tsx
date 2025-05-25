@@ -6,11 +6,12 @@ import {z} from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import Link from "next/link";
-import {useUser} from "@/Stores/Providers/UserStoreProvider";
-import {useState} from "react";
+import {useUser} from "@/Stores/Providers/UserStoreProvider"; 
 import {UserProfileToken} from "@/Models/User";
 import {api, axiosPrivate} from "@/Services/ApiService";
-import useSWR from "swr";
+
+import useSWRMutation from 'swr/mutation'
+import {useSWRConfig} from "swr";
 
 export const SignIn = () => {
 
@@ -30,54 +31,54 @@ export const SignIn = () => {
     });
 
     // Add loading and error states
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState("")
+    // const [isLoading, setIsLoading] = useState(false)
+    // const [error, setError] = useState("")
 
-    const [values,setValues] = useState<Values>({
-        username: "",
-        password: ""
-    })
     
-    
-    
+
+    // Use useSWRMutation for POST requests triggered manually
+    const { trigger: loginUser, isMutating: isLoading, error } = useSWRMutation(
+        `${api}/user/login`,
+        async (url: string, { arg }: { arg: Values }) => {
+            const response = await axiosPrivate.post<UserProfileToken>(url, {
+                username: arg.username,
+                password: arg.password
+            })
+            return response.data
+        }
+    )
+
+    const {mutate} = useSWRConfig()
     const onSubmit = async (values: Values) => {
-        setIsLoading(true)
-        setError("")
-        
-
         try {
             
-            setValues(values)
-          const user =  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
-                username: values?.username,
-                password: values?.password
-            }).then(res => res.data)
             
+            const user = await loginUser(values)
+
             if (user && user.id) {
-                setUser(user)
+                await mutate(`${api}/user/login`, user, { revalidate: false })
+                
                 router.push(`/account/${user.username}`)
                 
             } else {
-                setError("Login failed. Please check your credentials.")
                 console.error("Login failed: Invalid response")
             }
         } catch (error) {
-            setError("Network error. Please try again later.")
             console.error("Login error:", error)
-        } finally {
-            setIsLoading(false)
         }
        
     };
-    const {data:user}=useSWR(`${api}/user/login`, async ()=>{
-        return  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
-            username: values.username,
-            password: values.password
-        }) .then(res => res.data);
-    },{
-        revalidateIfStale: false,
-        dedupingInterval: 10000
-    })
+
+    // Remove the automatic SWR call since we're using useSWRMutation
+    // const {data:user}=useSWR(`${api}/user/login`, async ()=>{
+    //     return  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
+    //         username: values.username,
+    //         password: values.password
+    //     }) .then(res => res.data);
+    // },{
+    //     revalidateIfStale: false,
+    //     dedupingInterval: 10000
+    // })
        
             
     return (
@@ -88,7 +89,7 @@ export const SignIn = () => {
 
                 {error && (
                     <div className="error-message">
-                        {error}
+                        {error.message || "Login failed. Please try again."}
                     </div>
                 )}
 

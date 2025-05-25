@@ -233,6 +233,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="how to fetch the user from other component using the value stored in cache">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748190733324" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how to get already fetched data using swr">
           <value>
             <GhostTextMetaData>
@@ -257,6 +269,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="how to use swr for login after submit  @SignIn.tsx">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748189919302" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="the socket server provided is not connecting to the frontend one">
           <value>
             <GhostTextMetaData>
@@ -276,6 +300,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1748171532115" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="user is still undefined">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748191024545" />
                 </list>
               </option>
             </GhostTextMetaData>

@@ -4,8 +4,9 @@ import "./ChatRooms.css"
 import "./ChatRoom.css"
 import {ChatRoom} from "@/components/ChatRoom/ChatRoom";
 import {api, axiosPrivate} from "@/Services/ApiService";
-import useSWR from "swr";
+import useSWR, {mutate} from "swr";
 import {cache} from "swr/_internal";
+import {UserProfileToken} from "@/Models/User";
 
 
 
@@ -20,20 +21,23 @@ export const ChatRooms = (props: ChatRoomsProps ) => {
     const [activeChatRoomId, setActiveChatRoomId] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(true)
 
-    const {data:user} = useSWR(`${api}/user/login`,null,{
-        shouldRetryOnError: false,
+    const { data: user } = useSWR(`${api}/user/login`, null, {
         revalidateOnFocus: false,
-        revalidateOnMount: false
+        revalidateOnReconnect: false,
+        revalidateIfStale: false,
+        refreshInterval: 0
     })
-    
-   // const user =cache.get(`${api}/user`)?.data
+
+   
+   
+   
     
     useEffect(() => {
         
         console.log(props.chatRooms)
         
         
-        // getChatroom().catch((e) => {console.error(e)})
+      
        
         setIsLoading(true)
 
@@ -49,13 +53,7 @@ export const ChatRooms = (props: ChatRoomsProps ) => {
             setIsLoading(false)
         
         
-        async function getChatroom(){
-            
-                const response =  await axiosPrivate(`${api}/chatroom/${user}`)
-                    setChatRooms(response.data)
-                return response.data   
-            
-        }
+       
 
     }, [])
 
