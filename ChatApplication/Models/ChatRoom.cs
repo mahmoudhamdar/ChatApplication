@@ -15,7 +15,7 @@ public class ChatRoom
     public DateTime CreatedAt { get; set; }
 
     
-    public IEnumerable<Message> Messages { get; set; }
+    public ICollection<Message> Messages { get; set; }
 
-    public IEnumerable<UserChatRoom> UserChatRoom { get; set; }
+    public ICollection<UserChatRoom> UserChatRoom { get; set; }
 }

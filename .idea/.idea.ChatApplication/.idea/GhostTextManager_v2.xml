@@ -101,6 +101,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="The relationship defined by this property contributes to a dependency loop">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748159481054" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="TypeError: Cannot read properties of undefined (reading 'roomId')&#10;    at ChatRooms.useEffect (http://localhost:3000/_next/static/chunks/src_df2a3c1e._.js:182:46)&#10;    at account (rsc://React/Server/C:%5CUsers%5Cabbas%5CRiderProjects%5CChatApplication%5Cfrontend%5C.next%5Cserver%5Cchunks%5Cssr%5C%5Broot-of-the-server%5D__a413c29b._.js?25:290:405)">
           <value>
             <GhostTextMetaData>
@@ -173,6 +185,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="does npx create a git repository">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748094199290" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how can I get the userId to the ccount page">
           <value>
             <GhostTextMetaData>
@@ -228,6 +252,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1746962299063" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="what about vite">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748094329535" />
                 </list>
               </option>
             </GhostTextMetaData>

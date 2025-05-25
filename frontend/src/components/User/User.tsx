@@ -2,6 +2,7 @@
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {UserProfileToken} from "@/Models/User";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
+import useSWR from "swr";
 
 interface UserProps {
     id: string,
@@ -14,8 +15,8 @@ interface UserProps {
 
 
 export const User = (props:UserProps)=>{
-    
-    const {user} = useUser()
+
+    const {data:user} = useSWR(`${api}/user`,null)
     
     async function handleClick(){
         

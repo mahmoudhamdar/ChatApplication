@@ -17,7 +17,7 @@ public class Repository<T> : IRepository<T> where T : class
         DbSet = _chatAppContext.Set<T>();
     }
 
-    public async Task<IEnumerable<T>> GetallAsync()
+    public async Task<ICollection<T>> GetallAsync()
     {
         IQueryable<T> query = DbSet;
 
@@ -25,7 +25,7 @@ public class Repository<T> : IRepository<T> where T : class
     }
 
 
-    public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>>? filter)
+    public async Task<ICollection<T>> GetAsync(Expression<Func<T, bool>>? filter)
     {
         IQueryable<T> query = DbSet;
         return await query.Where(filter).ToListAsync();

@@ -5,7 +5,12 @@ import "./Window.css"
 import {useRoom} from "@/Stores/Providers/RoomStoreProvider";
 
 
-export const ChatWindow = () => {
+interface ChatWindowProps {
+    Messages: MessageType[]
+   
+}
+
+export const ChatWindow = (props:ChatWindowProps) => {
     const {roomName, roomId} = useRoom()
 
     if (!roomId) {
@@ -26,7 +31,7 @@ export const ChatWindow = () => {
             </div>
 
             <div className="chat-window-messages">
-                <Messages/>
+                <Messages Messages={props.Messages}/>
             </div>
 
             <div className="chat-window-input">

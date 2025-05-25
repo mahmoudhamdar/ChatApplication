@@ -36,10 +36,8 @@ export default async  function account({params}: {params: { id: string }}) {
     
   console.log(chatRooms)
    
-    return (
-        
-        
-        <div className="app-container">
+    return 
+       /* <div className="app-container">
             
             <button className="mobile-menu-button" >
                 {"☰"}
@@ -57,7 +55,7 @@ export default async  function account({params}: {params: { id: string }}) {
            <div className="main-content">
                 <ChatWindow/>
             </div>
-        </div>
+        </div>*/
 
-    )
+    
 }

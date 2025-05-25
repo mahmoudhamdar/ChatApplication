@@ -5,34 +5,46 @@ import {ChatWindow} from "@/components/ChatWIndow/ChatWindow";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {AddConversation} from "@/components/AddConversation";
 import {use} from "react";
+import {UserProfileToken} from "@/Models/User";
 
 
 
 
 export  async function fetchChatRooms (id: string): Promise<ChatRoomType[]> {
-
-
-    const response = await axiosPrivate.get<ChatRoomType[]>(`${api}/chatroom/${id}`)
+    
+    const response:ChatRoomType[] = await fetch(`${api}/chatroom/${id}`,{method: "GET"})
+        .then(res => res.json())
         .then(res => res.data)
-    console.log(response)
+   
     return response
 
 }
 
-export async function fetchMessages (roomId: string) {
+export async function fetchMessages (id: string) {
 
-    const response = await axiosPrivate(`${api}/messages/${roomId}`)
+    const response:MessageType[] = await fetch(`${api}/messagesUser/${id}`,{method:"GET"})
+    .then(res=>res.json()).then(res => res.data)
 
-    return response.data
+    return response
 }
 
+export async function fetchId (name: string) {
 
+   const user:UserProfileToken = await fetch(`${api}/username/${name}`,{method:"GET"})
+        .then(res=>res.json())
+        .then(res => res)
+    return user
+}
 
-export default async  function account({params}: {params: { id: string }}) {
+export default async  function account({params}: {params: { name: string }}) {
 
-    const userId = params.id
+    console.log(params.name)
+    const username = params.name
+    const id:string = await fetchId(username).then(res=>res.id)
 
-    const chatRooms:ChatRoomType[] = await fetchChatRooms(userId)
+    const chatRooms:ChatRoomType[] = await fetchChatRooms(id)
+    
+    const Messages:MessageType[] = await fetchMessages(id)
 
     console.log(chatRooms)
 
@@ -55,7 +67,7 @@ export default async  function account({params}: {params: { id: string }}) {
             </div>
 
             <div className="main-content">
-                <ChatWindow/>
+                <ChatWindow Messages={Messages}/>
             </div>
         </div>
 

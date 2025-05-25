@@ -7,10 +7,8 @@ namespace WebApplication1.Mappers.UserMapper;
 public class UserMapper:IUserMapper
 {
     
-    public UserMapper()
-    {
-        
-    }
+   
+    
     public UserResponse UserToResponse(User user)
     {
 

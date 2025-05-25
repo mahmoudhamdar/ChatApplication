@@ -6,9 +6,11 @@ import {z} from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import Link from "next/link";
-import {loginApi} from "@/Services/UserApiService";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
 import {useState} from "react";
+import {UserProfileToken} from "@/Models/User";
+import {api, axiosPrivate} from "@/Services/ApiService";
+import useSWR from "swr";
 
 export const SignIn = () => {
 
@@ -31,16 +33,26 @@ export const SignIn = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState("")
 
+    const [values,setValues] = useState<Values>()
+    
+    
+    
     const onSubmit = async (values: Values) => {
         setIsLoading(true)
         setError("")
+        
 
         try {
-            const response = await loginApi(values.username, values.password)
-
-            if (response?.data && response.data.id) {
-                setUser(response.data)
-                router.push(`/account/${response.data.id}`)
+            
+            setValues(values)
+          const user =  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
+                username: values?.username,
+                password: values?.password
+            }).then(res => res.data)
+            
+            if (user && user.id) {
+                setUser(user)
+                router.push(`/account/${user.username}`)
                 
             } else {
                 setError("Login failed. Please check your credentials.")
@@ -54,6 +66,12 @@ export const SignIn = () => {
         }
        
     };
+    const {data:user}=useSWR(`${api}/user`, async ()=>{
+        return  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
+            username: values?.username,
+            password: values?.password
+        }).then(res => res.data)
+    })
 
     return (
         <div className="auth-container">

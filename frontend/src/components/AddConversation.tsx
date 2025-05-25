@@ -5,6 +5,7 @@ import {useState} from "react";
 import {UserProfileToken} from "@/Models/User";
 import {useRouter} from "next/navigation";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
+import useSWR from "swr";
 
 
 export interface user {
@@ -16,9 +17,9 @@ export interface user {
 
  
 export const AddConversation = () => {
-    
-  
-    const {user} = useUser()
+
+
+    const {data:user} = useSWR(`${api}/user`,null)
     const [users,setUsers] = useState<UserProfileToken[]>([])
     const [loading, setLoading] = useState(false)
     const [show, setShow] = useState<boolean>(true)

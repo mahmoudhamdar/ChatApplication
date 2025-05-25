@@ -1,44 +1,36 @@
 "use client"
-import {use, useEffect, useRef, useState} from "react"
+import {useEffect, useRef, useState} from "react"
 import {Message} from "./Message"
-
-import {GetMessage} from "@/Services/MessageApiService"
 import {socket} from "@/Socket/socket"
-
 import "./Messages.css"
 import {useRoom} from "@/Stores/Providers/RoomStoreProvider";
-import {useUser} from "@/Stores/Providers/UserStoreProvider";
-import {api, axiosPrivate} from "@/Services/ApiService";
+import {api} from "@/Services/ApiService";
+import useSWR from "swr";
 
-type MessageType = {
-    messageId: string
-    roomId: string
-    content: string
-    userId: string,
-    senderId: string,
-    recieverId: string,
-    timestamp: string
-    
+
+interface MessagesProps {
+    Messages: MessageType[]
 }
 
-export const Messages = () => {
+export const Messages = (props:MessagesProps) => {
     const {roomId} = useRoom()
-    const {user} = useUser()
+    
     const [messages, setMessages] = useState<MessageType[]>([])
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading] = useState(false)
     const messagesEndRef = useRef<HTMLDivElement>(null)
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({behavior: "smooth"})
     }
 
+    const {data:user} = useSWR(`${api}/user`,null)
    
     
     
     useEffect(() => {
       
         if (roomId) {
-            setIsLoading(true)
+           /* setIsLoading(true)
             axiosPrivate.get(`${api}/message/${roomId}`)
                 .then((response) => {
                         // @ts-ignore
@@ -52,14 +44,15 @@ export const Messages = () => {
                 })
                 .finally(() => {
                     setIsLoading(false)
-                })
+                })*/
+            setMessages(props.Messages)
 
         }
 
         function handleNewMessage(message: MessageType[]) {
             console.log(" messages:", message)
             console.log("room" + roomId)
-            const roomMessages: MessageType[] = message.filter((msg: MessageType) => msg.roomId === roomId)
+            const roomMessages: MessageType[] = message.filter((msg: MessageType) => msg.RoomId === roomId)
             console.log("Room messages:", roomMessages)
             setMessages((prevMessages) => [...prevMessages, ...roomMessages])
            console.log(messages)

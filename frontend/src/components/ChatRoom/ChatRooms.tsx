@@ -1,10 +1,10 @@
 "use client"
-import {use, useEffect, useState} from "react"
+import { useEffect, useState} from "react"
 import "./ChatRooms.css"
 import "./ChatRoom.css"
 import {ChatRoom} from "@/components/ChatRoom/ChatRoom";
-import {useUser} from "@/Stores/Providers/UserStoreProvider";
 import {api, axiosPrivate} from "@/Services/ApiService";
+import useSWR from "swr";
 
 
 
@@ -19,7 +19,7 @@ export const ChatRooms = (props: ChatRoomsProps ) => {
     const [activeChatRoomId, setActiveChatRoomId] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(true)
 
-    const {user} = useUser()
+    const {data:user} = useSWR(`${api}/user`,null)
 
     useEffect(() => {
         

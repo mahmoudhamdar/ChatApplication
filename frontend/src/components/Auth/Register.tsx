@@ -11,6 +11,8 @@ import Link from "next/link";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {UserProfileToken} from "@/Models/User";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
+import useSWR from "swr";
+import {useState} from "react";
 
 export const Register = () => {
     type Values = {
@@ -20,6 +22,8 @@ export const Register = () => {
         confirmPassword: string
     }
     const {setUser} = useUser()
+
+    const [value,setValues] = useState<Values>()
     const router =useRouter()
     const schema = z.object({
         username: z.coerce.string(),
@@ -41,23 +45,32 @@ export const Register = () => {
 
     const onSubmit = async (value: Values) => {
         console.log(value);
-
-        const response:UserProfileToken = await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
+        setValues(value)
+        const user =  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
             username: value.username,
             password: value.password,
             email: value.email,
-        })        
-        .then(res => {
-            setUser(res.data)
-            return res.data;
-        });
-        console.log(response);
+        }).then(res => res.data)
+
+
+
+        console.log(user);
       
         
-        router.push(`/account/${response.id}`)
+        router.push(`/account/${user.username}`)
 
     }
 
+    const {data:user}=useSWR(`${api}/user`, async ()=>{
+        return  await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
+            username: value?.username,
+            password: value?.password,
+            email: value?.email,
+        }) .then(res => {
+           
+            return res.data;
+        });
+    })
     return (
         <div className="auth-container">
             <div className="auth-card">

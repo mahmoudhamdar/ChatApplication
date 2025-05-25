@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "FastEndpoints.Attributes": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -91,7 +95,7 @@
             },
             "ZLinq": {
               "target": "Package",
-              "version": "[1.4.5, )"
+              "version": "[1.4.7, )"
             }
           },
           "imports": [

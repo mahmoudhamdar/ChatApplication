@@ -68,7 +68,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "FastEndpoints.Attributes/6.0.0": {
+      "FastEndpoints.Attributes/6.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0"
@@ -1802,7 +1802,7 @@
           }
         }
       },
-      "ZLinq/1.4.5": {
+      "ZLinq/1.4.7": {
         "type": "package",
         "compile": {
           "lib/net9.0/ZLinq.dll": {
@@ -1875,14 +1875,14 @@
         "lib/net9.0/FastEndpoints.xml"
       ]
     },
-    "FastEndpoints.Attributes/6.0.0": {
-      "sha512": "j0VsFiriBeVuwMfnLYNn8GyUc+fbN3ZByDk9/OjAukfaLyftxlPdJly65LfBEzH/nKR3R7aa7cKoZz2V8iSPIQ==",
+    "FastEndpoints.Attributes/6.1.0": {
+      "sha512": "ZsLRP+AtnoZKzcVG0/YE0FkjEA31tMxeWCqdQbM6fhLmIiH/SYLO6QUPEJsrEUyVsYeIG0sj4WiGgL8LqzTfiA==",
       "type": "package",
-      "path": "fastendpoints.attributes/6.0.0",
+      "path": "fastendpoints.attributes/6.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fastendpoints.attributes.6.0.0.nupkg.sha512",
+        "fastendpoints.attributes.6.1.0.nupkg.sha512",
         "fastendpoints.attributes.nuspec",
         "icon.png",
         "lib/netstandard2.0/FastEndpoints.Attributes.dll",
@@ -4936,10 +4936,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "ZLinq/1.4.5": {
-      "sha512": "lp0uCKoORm00MqqSpcWW53BQD8olZMG2/Li7a6M7JOMAmR7e0TEtFDjPv3oQpsLsPedgiM2qlOS6/PVG1c519w==",
+    "ZLinq/1.4.7": {
+      "sha512": "0u1kXFx+rJP8SMNVjOl/HH1oIgnoZz7xqmzLPd2ZabjDz5xwnZ8Dq/D4NrcrtYXcOg4A9WE5mqrilHCSg6RbGA==",
       "type": "package",
-      "path": "zlinq/1.4.5",
+      "path": "zlinq/1.4.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4953,7 +4953,7 @@
         "lib/netstandard2.0/ZLinq.xml",
         "lib/netstandard2.1/ZLinq.dll",
         "lib/netstandard2.1/ZLinq.xml",
-        "zlinq.1.4.5.nupkg.sha512",
+        "zlinq.1.4.7.nupkg.sha512",
         "zlinq.nuspec"
       ]
     }
@@ -4961,6 +4961,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "FastEndpoints >= 6.0.0",
+      "FastEndpoints.Attributes >= 6.1.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.4",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.4",
       "Microsoft.AspNetCore.OpenApi >= 9.0.4",
@@ -4969,7 +4970,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.4",
       "NetCoreServer >= 8.0.7",
       "SocketIOClient >= 3.1.2",
-      "ZLinq >= 1.4.5"
+      "ZLinq >= 1.4.7"
     ]
   },
   "packageFolders": {
@@ -5027,6 +5028,10 @@
             "target": "Package",
             "version": "[6.0.0, )"
           },
+          "FastEndpoints.Attributes": {
+            "target": "Package",
+            "version": "[6.1.0, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[9.0.4, )"
@@ -5063,7 +5068,7 @@
           },
           "ZLinq": {
             "target": "Package",
-            "version": "[1.4.5, )"
+            "version": "[1.4.7, )"
           }
         },
         "imports": [
