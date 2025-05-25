@@ -113,6 +113,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="TypeError: Cannot read properties of undefined (reading 'id')&#10;    at http://localhost:3000/_next/static/chunks/src_df2a3c1e._.js:455:59&#10;    at Array.map (&lt;anonymous&gt;)&#10;    at Messages (http://localhost:3000/_next/static/chunks/src_df2a3c1e._.js:453:33)&#10;    at ChatWindow (http://localhost:3000/_next/static/chunks/src_df2a3c1e._.js:665:356)&#10;    at account (rsc://React/Server/C:%5CUsers%5Cabbas%5CRiderProjects%5CChatApplication2%5Cfrontend%5C.next%5Cserver%5Cchunks%5Cssr%5C%5Broot-of-the-server%5D__a413c29b._.js?33:324:405)">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748178399785" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="TypeError: Cannot read properties of undefined (reading 'roomId')&#10;    at ChatRooms.useEffect (http://localhost:3000/_next/static/chunks/src_df2a3c1e._.js:182:46)&#10;    at account (rsc://React/Server/C:%5CUsers%5Cabbas%5CRiderProjects%5CChatApplication%5Cfrontend%5C.next%5Cserver%5Cchunks%5Cssr%5C%5Broot-of-the-server%5D__a413c29b._.js?25:290:405)">
           <value>
             <GhostTextMetaData>
@@ -221,6 +233,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="how to get already fetched data using swr">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748171704121" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how to pass the Id to the params from signIn or Register">
           <value>
             <GhostTextMetaData>
@@ -240,6 +264,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1746967096280" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="use swr without refetching">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748171532115" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -281,6 +317,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="why name is undefined when getting it from param">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748167804544" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="why the chatrooms are empty when passed as a props">
           <value>
             <GhostTextMetaData>
@@ -288,6 +336,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1747825406281" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="why the id is reading undefined">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748176488822" />
                 </list>
               </option>
             </GhostTextMetaData>

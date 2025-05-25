@@ -5,6 +5,7 @@ import "./ChatRoom.css"
 import {ChatRoom} from "@/components/ChatRoom/ChatRoom";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import useSWR from "swr";
+import {cache} from "swr/_internal";
 
 
 
@@ -19,14 +20,20 @@ export const ChatRooms = (props: ChatRoomsProps ) => {
     const [activeChatRoomId, setActiveChatRoomId] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(true)
 
-    const {data:user} = useSWR(`${api}/user`,null)
-
+    const {data:user} = useSWR(`${api}/user/login`,null,{
+        shouldRetryOnError: false,
+        revalidateOnFocus: false,
+        revalidateOnMount: false
+    })
+    
+   // const user =cache.get(`${api}/user`)?.data
+    
     useEffect(() => {
         
         console.log(props.chatRooms)
         
         
-         getChatroom().catch((e) => {console.error(e)})
+        // getChatroom().catch((e) => {console.error(e)})
        
         setIsLoading(true)
 
@@ -44,7 +51,7 @@ export const ChatRooms = (props: ChatRoomsProps ) => {
         
         async function getChatroom(){
             
-                const response =  await axiosPrivate(`${api}/chatroom/${user.id}`)
+                const response =  await axiosPrivate(`${api}/chatroom/${user}`)
                     setChatRooms(response.data)
                 return response.data   
             

@@ -12,39 +12,39 @@ import {UserProfileToken} from "@/Models/User";
 
 export  async function fetchChatRooms (id: string): Promise<ChatRoomType[]> {
     
-    const response:ChatRoomType[] = await fetch(`${api}/chatroom/${id}`,{method: "GET"})
-        .then(res => res.json())
-        .then(res => res.data)
+    
    
+    const response = await axiosPrivate.get(`${api}/chatroom/${id}`).then(res => res.data)
     return response
 
 }
 
-export async function fetchMessages (id: string) {
+export async function fetchMessages (id: string):Promise<MessageType[]> {
 
-    const response:MessageType[] = await fetch(`${api}/messagesUser/${id}`,{method:"GET"})
-    .then(res=>res.json()).then(res => res.data)
+    const response:MessageType[] = await axiosPrivate.get(`${api}/messagesUser/${id}`)
+    .then(res => res.data)
 
     return response
 }
 
-export async function fetchId (name: string) {
+export async function fetchId (name: string):Promise<UserProfileToken> {
 
-   const user:UserProfileToken = await fetch(`${api}/username/${name}`,{method:"GET"})
-        .then(res=>res.json())
-        .then(res => res)
+   const user:UserProfileToken = await axiosPrivate.get(`${api}/username/${name}`)
+        .then(res => res.data)
     return user
 }
 
-export default async  function account({params}: {params: { name: string }}) {
+export default async  function account({params}: {params: { id: string }}) {
 
-    console.log(params.name)
-    const username = params.name
-    const id:string = await fetchId(username).then(res=>res.id)
+    console.log(params.id)
+    const username = params.id
+    const user:UserProfileToken = await fetchId(username)
 
-    const chatRooms:ChatRoomType[] = await fetchChatRooms(id)
+    console.log(user.id)
     
-    const Messages:MessageType[] = await fetchMessages(id)
+    const chatRooms:ChatRoomType[] = await fetchChatRooms(user.id)
+    
+    const Messages:MessageType[] = await fetchMessages(user.id)
 
     console.log(chatRooms)
 

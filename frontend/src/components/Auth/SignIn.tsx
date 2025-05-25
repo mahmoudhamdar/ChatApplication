@@ -33,7 +33,10 @@ export const SignIn = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState("")
 
-    const [values,setValues] = useState<Values>()
+    const [values,setValues] = useState<Values>({
+        username: "",
+        password: ""
+    })
     
     
     
@@ -66,13 +69,17 @@ export const SignIn = () => {
         }
        
     };
-    const {data:user}=useSWR(`${api}/user`, async ()=>{
+    const {data:user}=useSWR(`${api}/user/login`, async ()=>{
         return  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
-            username: values?.username,
-            password: values?.password
-        }).then(res => res.data)
+            username: values.username,
+            password: values.password
+        }) .then(res => res.data);
+    },{
+        revalidateIfStale: false,
+        dedupingInterval: 10000
     })
-
+       
+            
     return (
         <div className="auth-container">
             <div className="auth-card">

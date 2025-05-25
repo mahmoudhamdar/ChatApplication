@@ -10,13 +10,18 @@ import {useUser} from "@/Stores/Providers/UserStoreProvider";
 import {user} from "@/components/AddConversation";
 import {UserProfileToken} from "@/Models/User";
 import useSWR from "swr";
+import {cache} from "swr/_internal";
 export const MessageInput = () => {
     const [message, setMessage] = useState<string>("")
     const [isSending, setIsSending] = useState(false)
     
     const {roomId} = useRoom()
 
-    const {data:user} = useSWR(`${api}/user`,null)
+    const {data:user} = useSWR(`${api}/user/login`,null,{
+        shouldRetryOnError: false,
+        revalidateOnFocus: false,
+        revalidateOnMount: false
+    })
     
     const  sendMessage = async (messageContent: string) => {
         if (!user?.id || !roomId || !messageContent.trim()) {

@@ -8,6 +8,7 @@ import {api} from "@/Services/ApiService";
 import useSWR from "swr";
 
 
+
 interface MessagesProps {
     Messages: MessageType[]
 }
@@ -23,10 +24,17 @@ export const Messages = (props:MessagesProps) => {
         messagesEndRef.current?.scrollIntoView({behavior: "smooth"})
     }
 
-    const {data:user} = useSWR(`${api}/user`,null)
-   
+    const {data:user} = useSWR(`${api}/user/login`,null,{
+            shouldRetryOnError: false,
+            revalidateOnFocus: false,
+            revalidateOnMount: false
+    })
+
     
     
+
+
+
     useEffect(() => {
       
         if (roomId) {
@@ -83,7 +91,7 @@ export const Messages = (props:MessagesProps) => {
             ) : (
                 messages.map((message: MessageType) => (
                     <Message key={message.messageId} content={message.content}
-                             isOwnMessage={message.userId === user.id}/>
+                             isOwnMessage={user?.id ? message.userId === user.id : false}/>
                 ))
             )}
             <div ref={messagesEndRef}/>

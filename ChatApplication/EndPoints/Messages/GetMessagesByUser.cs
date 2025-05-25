@@ -33,7 +33,7 @@ namespace WebApplication1.EndPoints.Messages;
             
             var messages=  await _unitOfWork.MessageRepository
                 .GetAsync(x=>x.senderId.Equals(id) || x.recieverId.Equals(id) );
-            if (messages.Count == 0)
+            if (messages is null)
             {
                 return TypedResults.NotFound();
             }            

@@ -23,7 +23,12 @@ export const Register = () => {
     }
     const {setUser} = useUser()
 
-    const [value,setValues] = useState<Values>()
+    const [value,setValues] = useState<Values>({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: ""     
+    })
     const router =useRouter()
     const schema = z.object({
         username: z.coerce.string(),
@@ -46,14 +51,14 @@ export const Register = () => {
     const onSubmit = async (value: Values) => {
         console.log(value);
         setValues(value)
-        const user =  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
+        const user =  await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
             username: value.username,
             password: value.password,
             email: value.email,
         }).then(res => res.data)
 
 
-
+        setValues(value)
         console.log(user);
       
         
@@ -61,10 +66,10 @@ export const Register = () => {
 
     }
 
-    const {data:user}=useSWR(`${api}/user`, async ()=>{
-        return  await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
-            username: value?.username,
-            password: value?.password,
+    const {data:user}=useSWR(`${api}/user/login`, async ()=>{
+        return  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
+            username: value.username,
+            password: value.password,
             email: value?.email,
         }) .then(res => {
            
