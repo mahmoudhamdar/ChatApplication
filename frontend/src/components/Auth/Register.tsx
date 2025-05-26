@@ -11,8 +11,9 @@ import Link from "next/link";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {UserProfileToken} from "@/Models/User";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
-import useSWR from "swr";
+import useSWR, {useSWRConfig} from "swr";
 import {useState} from "react";
+import useSWRMutation from "swr/mutation";
 
 export const Register = () => {
     type Values = {
@@ -46,17 +47,23 @@ export const Register = () => {
     const {register, handleSubmit, formState: {errors}} = useForm<Values>({
         resolver: zodResolver(schema)
     });
-
-
+    const { trigger: loginUser, } = useSWRMutation(
+        `${api}/user/login`,
+        async (url: string, { arg }: { arg: Values }) => {
+            const response = await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
+                username: arg.username,
+                password: arg.password,
+                email:arg.email
+            })
+            return response.data
+        }
+    )
+    const {mutate} = useSWRConfig()
     const onSubmit = async (value: Values) => {
-        console.log(value);
-        setValues(value)
-        const user =  await axiosPrivate.post<UserProfileToken>(`${api}/user/register`, {
-            username: value.username,
-            password: value.password,
-            email: value.email,
-        }).then(res => res.data)
-
+        
+        const user = await loginUser(value)
+        
+        await mutate(`${api}/user/login`, user, { revalidate: false })
 
         setValues(value)
         console.log(user);
@@ -66,16 +73,7 @@ export const Register = () => {
 
     }
 
-    const {data:user}=useSWR(`${api}/user/login`, async ()=>{
-        return  await axiosPrivate.post<UserProfileToken>(`${api}/user/login`, {
-            username: value.username,
-            password: value.password,
-            email: value?.email,
-        }) .then(res => {
-           
-            return res.data;
-        });
-    })
+   
     return (
         <div className="auth-container">
             <div className="auth-card">

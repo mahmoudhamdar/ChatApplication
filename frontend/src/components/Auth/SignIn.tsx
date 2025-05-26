@@ -19,7 +19,7 @@ export const SignIn = () => {
         username: string
         password: string
     }
-    const {setUser}=useUser()
+   
     const router =useRouter()
     const schema = z.object({
         username: z.string(),
@@ -30,10 +30,7 @@ export const SignIn = () => {
         resolver: zodResolver(schema),
     });
 
-    // Add loading and error states
-    // const [isLoading, setIsLoading] = useState(false)
-    // const [error, setError] = useState("")
-
+   
     
 
     // Use useSWRMutation for POST requests triggered manually
