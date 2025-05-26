@@ -16,7 +16,12 @@ interface UserProps {
 
 export const User = (props:UserProps)=>{
 
-    const {data:user} = useSWR(`${api}/user`,null)
+    const {data:user} = useSWR(`${api}/user/login`,null,{ 
+        shouldRetryOnError: false,
+        revalidateOnFocus: false,
+        revalidateOnMount: false
+
+    })
     
     async function handleClick(){
         

@@ -14,12 +14,19 @@ export interface user {
     username: string
     
 }
-
+interface AddConversationProps{
+    users: UserProfileToken[]
+}
  
-export const AddConversation = () => {
+export const AddConversation = (props: AddConversationProps) => {
 
 
-    const {data:user} = useSWR(`${api}/user`,null)
+    const {data:user} = useSWR(`${api}/user/login`,null,{
+        shouldRetryOnError: false,
+        revalidateOnFocus: false,
+        revalidateOnMount: false
+
+    })
     const [users,setUsers] = useState<UserProfileToken[]>([])
     const [loading, setLoading] = useState(false)
     const [show, setShow] = useState<boolean>(true)
@@ -38,12 +45,12 @@ export const AddConversation = () => {
   async  function handleClick() {
       try {
         setLoading(true)
-        const users:UserProfileToken[] = await fetchUsers()
+       
         console.log("Users fetched:", users)
 
-        const userd:UserProfileToken[] = users.filter((User:UserProfileToken) => User.username !== user.username)
-        console.log("Filtered users:", userd)
-        setUsers(userd)
+        
+        setUsers(props.users)
+        console.log("Filtered users:", users)
       } catch (error) {
         console.error("Error fetching users:", error)
       } finally {

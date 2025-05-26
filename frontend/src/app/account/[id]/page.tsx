@@ -4,11 +4,11 @@ import {ChatRooms} from "@/components/ChatRoom/ChatRooms";
 import {ChatWindow} from "@/components/ChatWIndow/ChatWindow";
 import {api, axiosPrivate} from "@/Services/ApiService";
 import {AddConversation} from "@/components/AddConversation";
-import {use} from "react";
+import { unstable_noStore as noStore } from 'next/cache';
 import {UserProfileToken} from "@/Models/User";
 
 
-
+ export const revalidate =1
 
 export  async function fetchChatRooms (id: string): Promise<ChatRoomType[]> {
     
@@ -33,20 +33,29 @@ export async function fetchId (name: string):Promise<UserProfileToken> {
         .then(res => res.data)
     return user
 }
+async function fetchUsers(id:string) {
 
+    const users:UserProfileToken[]= await axiosPrivate.get(`${api}/user/noChatRoomUsers/${id}`)
+        .then(response => response.data);
+    return users
+
+
+}
 export default async  function account({params}: {params: { id: string }}) {
 
-    console.log(params.id)
+  //  noStore();
+    
     const username = params.id
+    
+    
     const user:UserProfileToken = await fetchId(username)
-
-    console.log(user.id)
     
     const chatRooms:ChatRoomType[] = await fetchChatRooms(user.id)
     
     const Messages:MessageType[] = await fetchMessages(user.id)
 
-    console.log(chatRooms)
+    const users:UserProfileToken[] = await  fetchUsers(user.id)
+        .then(res=> res.filter((User:UserProfileToken) => User.username !== user.username))
 
     return (
 
@@ -63,7 +72,7 @@ export default async  function account({params}: {params: { id: string }}) {
             </div>
 
             <div className="sidebar-overlay">
-                <AddConversation/>
+                <AddConversation users={users}/>
             </div>
 
             <div className="main-content">

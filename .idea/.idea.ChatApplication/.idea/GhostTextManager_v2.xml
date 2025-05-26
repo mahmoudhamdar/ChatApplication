@@ -245,6 +245,30 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="how to force a revalidation every 40 second">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748244240415" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="how to force revalidation in next server component">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748243804394" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="how to get already fetched data using swr">
           <value>
             <GhostTextMetaData>
