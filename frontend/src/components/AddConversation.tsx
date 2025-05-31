@@ -6,6 +6,7 @@ import {UserProfileToken} from "@/Models/User";
 import {useRouter} from "next/navigation";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
 import useSWR from "swr";
+import {socket} from "@/Socket/socket";
 
 
 export interface user {
@@ -30,40 +31,30 @@ export const AddConversation = (props: AddConversationProps) => {
     const [users,setUsers] = useState<UserProfileToken[]>([])
     const [loading, setLoading] = useState(false)
     const [show, setShow] = useState<boolean>(true)
-    async function fetchUsers() {
-        
-        const users:UserProfileToken[]= await axiosPrivate.get(`${api}/user/noChatRoomUsers/${user.id}`)
-            .then(response => response.data);
-        return users
-        
-        
-    }
-    
     
     const router= useRouter()
     
   async  function handleClick() {
       try {
         setLoading(true)
-       
-        console.log("Users fetched:", users)
-
-        
         setUsers(props.users)
-        console.log("Filtered users:", users)
       } catch (error) {
-        console.error("Error fetching users:", error)
       } finally {
         setLoading(false)
           setShow(true)
-         
       }
-  } 
-     
+  }
+
+    const handleConversationAdded = () => {
+        setShow(false)
+        setUsers([])
+        // Emit socket event and refresh page to get updated server data
+        socket.emit("conversationAdded")
+        router.refresh()
+    }
     
     return (
         <div >
-            
             <button onClick={handleClick}>Add Conversation</button>
             <div>
             {loading ? (

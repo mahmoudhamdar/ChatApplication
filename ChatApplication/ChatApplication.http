@@ -38,18 +38,11 @@ Accept: application/json
 }
 
 ###
-POST {{ChatApplication_HostAddress}}/api/message
+GET {{ChatApplication_HostAddress}}/api/message/470a5a10-55cb-4deb-80b4-d54068a9642c
 Content-Type: application/json
 Accept: application/json
 
-{
-  "RoomId":"6e00611b-24a4-4786-9f3a-a4689efbd2bb" ,
-  "Content":"Hello World",
-  "UserId":"72d31c29-2f37-4a6e-9c6c-e0973d1d93cc" ,
-  "senderId":"72d31c29-2f37-4a6e-9c6c-e0973d1d93cc",
-  "recieverId":"09d47d02-9e77-408a-9fc6-9cf041e4f057"
-  
-}
+
 
 
 

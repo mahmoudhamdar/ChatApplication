@@ -7,22 +7,26 @@ import {AddConversation} from "@/components/AddConversation";
 import { unstable_noStore as noStore } from 'next/cache';
 import {UserProfileToken} from "@/Models/User";
 
-
- export const revalidate =1
+export const revalidate=1
+ 
 
 export  async function fetchChatRooms (id: string): Promise<ChatRoomType[]> {
     
     
-   
-    const response = await axiosPrivate.get(`${api}/chatroom/${id}`).then(res => res.data)
+   const response =await fetch(`${api}/chatroom/${id}`, { next: { revalidate: 4 }, method: "GET",credentials: 'include' })
+       .then(response => response.json()).then(responseJson => {return responseJson as ChatRoomType[]})
+  //  const response = await axiosPrivate.get(`${api}/chatroom/${id}`, { next: { revalidate: 3600 } }).then(res => res.data)
     return response
 
 }
 
 export async function fetchMessages (id: string):Promise<MessageType[]> {
 
-    const response:MessageType[] = await axiosPrivate.get(`${api}/messagesUser/${id}`)
-    .then(res => res.data)
+    const response =await fetch(`${api}/messagesUser/${id}`, { next: { revalidate: 4 }, method: "GET",credentials: 'include' })
+        .then(response => response.json()).then(responseJson => {return responseJson as MessageType[]})
+    
+  //  const response:MessageType[] = await axiosPrivate.get(`${api}/messagesUser/${id}`)
+    //.then(res => res.data)
 
     return response
 }
@@ -43,8 +47,7 @@ async function fetchUsers(id:string) {
 }
 export default async  function account({params}: {params: { id: string }}) {
 
-  //  noStore();
-    
+  
     const username = params.id
     
     

@@ -1,38 +1,35 @@
 using FastEndpoints;
+using Microsoft.AspNetCore.Http.HttpResults;
 using WebApplication1.DTOs.ChatRoomDTO;
 using WebApplication1.Mappers.Mapping;
 using WebApplication1.Repository.IRepository;
 
 namespace WebApplication1.EndPoints.ChatRoom;
 
-public class GetChatRoomsEndPoint : EndpointWithoutRequest<IEnumerable<ChatRoomResponse>>
+public class GetChatRoomsEndPoint : 
+EndpointWithoutRequest<Results<Ok<IEnumerable<ChatRoomResponse>>, NotFound>>
 {
-    private readonly IMapping _chatRoomMapper;
-    private readonly IUnitOfWork _unitOfWork;
-   
+  private IMapping _chatRoomMapper;
+    private IUnitOfWork _unitOfWork;
 
-    public GetChatRoomsEndPoint(IUnitOfWork unitOfWork, IMapping chatRoomMapper)
+public GetChatRoomsEndPoint(IMapping chatRoomMapper, IUnitOfWork unitOfWork)
     {
-        _unitOfWork = unitOfWork;
         _chatRoomMapper = chatRoomMapper;
+        _unitOfWork = unitOfWork;
     }
-
-
     public override void Configure()
     {
         Get("/api/chatroom");
         AllowAnonymous();
     }
-
-
-    public override async Task HandleAsync(CancellationToken ct)
-    {
     
-        var chatrooms = _unitOfWork.ChatRoomRepository.GetallAsync().Result;
+    public override async Task<Results<Ok<IEnumerable<ChatRoomResponse>>, NotFound>> ExecuteAsync(CancellationToken ct)
+    {
+        var chatrooms = await _unitOfWork.ChatRoomRepository.GetallAsync();
         var response = _chatRoomMapper.ChatRomMapper.ChatRoomsToResponses(chatrooms);
-       
+        
+       return TypedResults.Ok(response);
         
         
-        await SendOkAsync(response, ct);
     }
 }

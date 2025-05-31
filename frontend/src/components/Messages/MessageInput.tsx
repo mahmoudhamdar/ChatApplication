@@ -43,7 +43,7 @@ export const MessageInput = () => {
             
         }
 
-        console.log("input" +messageData)
+        console.log("input" + messageData)
         axiosPrivate.post(`${api}/message`, messageData).catch(e => console.error(e))
         socket.emit("messageReceive", messageData)
         setMessage("")

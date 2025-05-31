@@ -6,6 +6,7 @@ import "./Messages.css"
 import {useRoom} from "@/Stores/Providers/RoomStoreProvider";
 import {api} from "@/Services/ApiService";
 import useSWR from "swr";
+import {useRouter} from "next/navigation";
 
 
 
@@ -33,37 +34,30 @@ export const Messages = (props:MessagesProps) => {
     
     
 
+const router =useRouter()
 
-
+    useEffect(() => {
+        // Filter messages for current room from server data
+        if (roomId && props.Messages) {
+            const roomMessages = props.Messages.filter((msg: MessageType) => msg.RoomId === roomId)
+            setMessages(roomMessages)
+        } else {
+            setMessages([])
+        }
+    }, [roomId, props.Messages])
     useEffect(() => {
       
         if (roomId) {
-           /* setIsLoading(true)
-            axiosPrivate.get(`${api}/message/${roomId}`)
-                .then((response) => {
-                        // @ts-ignore
-                    console.log(response.data)
-                    if (response && response.data) {
-                        setMessages(response.data)
-                    }
-                })
-                .catch((err) => {
-                    console.error("Error fetching messages:", err)
-                })
-                .finally(() => {
-                    setIsLoading(false)
-                })*/
+          
             setMessages(props.Messages)
 
         }
 
         function handleNewMessage(message: MessageType[]) {
-            console.log(" messages:", message)
-            console.log("room" + roomId)
+            
             const roomMessages: MessageType[] = message.filter((msg: MessageType) => msg.RoomId === roomId)
-            console.log("Room messages:", roomMessages)
             setMessages((prevMessages) => [...prevMessages, ...roomMessages])
-           console.log(messages)
+          
         }
 
         socket.on("messageSend", handleNewMessage)
@@ -71,7 +65,21 @@ export const Messages = (props:MessagesProps) => {
         // Add cleanup function to remove event listener when component unmounts or roomId changes
         
     }, [roomId])
+    /*useEffect(() => {
+        function handleNewMessage(newMessages: MessageType[]) {
+            // Just refresh the page to get updated server data
+            router.refresh()
+        }
 
+        socket.on("messageSend", handleNewMessage)
+
+        return () => {
+            socket.off("messageSend", handleNewMessage)
+        }
+    }, [router])*/
+    
+    
+    
     useEffect(() => {
         scrollToBottom()
     }, [messages])

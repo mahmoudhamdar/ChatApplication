@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
 
 function emit() {
     io.emit("messageSend", messages)
-    messages = []
+   
 }
 
 

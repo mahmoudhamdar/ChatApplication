@@ -4979,11 +4979,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abbas\\RiderProjects\\ChatApplication\\ChatApplication\\ChatApplication.csproj",
+      "projectUniqueName": "c:\\Users\\abbas\\RiderProjects\\ChatApplication\\ChatApplication\\ChatApplication.csproj",
       "projectName": "ChatApplication",
-      "projectPath": "C:\\Users\\abbas\\RiderProjects\\ChatApplication\\ChatApplication\\ChatApplication.csproj",
+      "projectPath": "c:\\Users\\abbas\\RiderProjects\\ChatApplication\\ChatApplication\\ChatApplication.csproj",
       "packagesPath": "C:\\Users\\abbas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abbas\\RiderProjects\\ChatApplication\\ChatApplication\\obj\\",
+      "outputPath": "c:\\Users\\abbas\\RiderProjects\\ChatApplication\\ChatApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abbas\\AppData\\Roaming\\NuGet\\NuGet.Config"

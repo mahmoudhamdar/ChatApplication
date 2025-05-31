@@ -3,6 +3,9 @@ import {Messages} from "../Messages/Messages"
 import {MessageInput} from "../Messages/MessageInput"
 import "./Window.css"
 import {useRoom} from "@/Stores/Providers/RoomStoreProvider";
+import { useRouter } from "next/navigation";
+import {socket} from "@/Socket/socket";
+import {useEffect} from "react";
 
 
 interface ChatWindowProps {
@@ -12,7 +15,8 @@ interface ChatWindowProps {
 
 export const ChatWindow = (props:ChatWindowProps) => {
     const {roomName, roomId} = useRoom()
-
+    
+   
     if (!roomId) {
         return (
             <div className="empty-chat-window">

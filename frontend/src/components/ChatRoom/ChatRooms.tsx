@@ -7,7 +7,8 @@ import {api, axiosPrivate} from "@/Services/ApiService";
 import useSWR, {mutate} from "swr";
 import {cache} from "swr/_internal";
 import {UserProfileToken} from "@/Models/User";
-
+import { useRouter } from "next/navigation";
+import {socket} from "@/Socket/socket";
 
 
 interface ChatRoomsProps {
@@ -28,34 +29,31 @@ export const ChatRooms = (props: ChatRoomsProps ) => {
         refreshInterval: 0
     })
 
-   
-   
-   
+    const router = useRouter()
     
     useEffect(() => {
-        
-        console.log(props.chatRooms)
-        
-        
-      
-       
         setIsLoading(true)
-
-       
-            console.log(props.chatRooms)    
-            
+        
             setChatRooms(props.chatRooms)
             if (props.chatRooms.length > 0 && !activeChatRoomId) {
                 // @ts-ignore
                 setActiveChatRoomId(props.chatRooms[0].roomId)
             }
-    
             setIsLoading(false)
-        
-        
-       
-
     }, [])
+    
+    useEffect(() => {
+        // Listen for new conversations and refresh the page to get server data
+        const handleNewConversation = () => {
+            router.refresh()
+        }
+
+        socket.on("conversationAdded", handleNewConversation)
+
+        return () => {
+            socket.off("conversationAdded", handleNewConversation)
+        }
+    }, [router])
 
     return (
         <div className="chat-rooms-container">

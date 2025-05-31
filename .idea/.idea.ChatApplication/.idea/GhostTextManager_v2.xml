@@ -3,6 +3,18 @@
   <component name="GhostTextManager">
     <option name="inputs">
       <map>
+        <entry key="@&lt;file_name&gt; &#10;I have a problem with messages and chatroom and add conversation .the problem is these are not updated when after (add a message ,add a conversation)">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748429355967" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="Can I use socketIOclient for asp.net  and socket-io-client for react">
           <value>
             <GhostTextMetaData>
@@ -52,6 +64,18 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="I also want the fetching to be done only on server">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748429720588" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
         <entry key="I waant to be able to debug this code help me fix it">
           <value>
             <GhostTextMetaData>
@@ -59,6 +83,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1746962081006" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="I want it to remain a server component">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748429559284" />
                 </list>
               </option>
             </GhostTextMetaData>
@@ -432,6 +468,18 @@
               <option name="timestamps">
                 <list>
                   <option value="1747645943253" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="with credentials in using fetch method">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1748450967359" />
                 </list>
               </option>
             </GhostTextMetaData>

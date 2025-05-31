@@ -3,6 +3,8 @@ import {api, axiosPrivate} from "@/Services/ApiService";
 import {UserProfileToken} from "@/Models/User";
 import {useUser} from "@/Stores/Providers/UserStoreProvider";
 import useSWR from "swr";
+import {socket} from "@/Socket/socket";
+import {useRouter} from "next/navigation";
 
 interface UserProps {
     id: string,
@@ -23,16 +25,25 @@ export const User = (props:UserProps)=>{
 
     })
     
+    const router = useRouter()
+    const handleConversationAdded = () => {
+        props.setShow(false)
+        
+        // Emit socket event and refresh page to get updated server data
+        socket.emit("conversationAdded")
+        router.refresh()
+    }
     async function handleClick(){
         
       const room:string =  await axiosPrivate.post(`${api}/chatroom`, {roomName: `${user.username} and ${props.username}`})
           .then(res => {return res.data.roomId})
-        console.log(room)
+        
         await axiosPrivate.post(`${api}/userChatRoom`, {roomId: room,userId: props.id})
         
         await axiosPrivate.post(`${api}/userChatRoom`, {roomId: room,userId: user.id})
         
-        props.setShow(false)
+        //props.setShow(false)
+        handleConversationAdded()
         
     }
     

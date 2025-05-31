@@ -15,8 +15,8 @@ public class GetMessageEndPoint : EndpointWithoutRequest<IEnumerable<MessageResp
 
     public GetMessageEndPoint(IUnitOfWork unitOfWork, IMapping messageMapper)
     {
-        _messageMapper = messageMapper;
-        _unitOfWork = unitOfWork;
+        (_messageMapper, _unitOfWork) = (messageMapper, unitOfWork);
+      
     }
 
 
@@ -29,11 +29,13 @@ public class GetMessageEndPoint : EndpointWithoutRequest<IEnumerable<MessageResp
 
     public override async Task HandleAsync(CancellationToken ct)
     {
+      
+        
         var id = Route<string>("id");
         var messages = _unitOfWork.MessageRepository.GetAsync(p => p.RoomId.Equals(id)).Result;
-        var messageresponse = _messageMapper.MessageMapper.MessagesToResponses(messages);
+        var messageResponse = _messageMapper.MessageMapper.MessagesToResponses(messages);
 
 
-        await SendAsync(messageresponse, 200, ct);
+        await SendAsync(messageResponse, 200, ct);
     }
 }
